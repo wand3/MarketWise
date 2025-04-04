@@ -1,5 +1,5 @@
-/backend/models/__py*/
-/backend/__py*/
+backend/models/__py*/
+backend/__py*/
 
 .env
 # does not ignore the README.md file
