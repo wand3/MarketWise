@@ -1,7 +1,7 @@
 from flask import Flask
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-from models import Base
+from models.product import Base
 from flask_cors import CORS
 
 
@@ -22,10 +22,10 @@ def make_shell_context():
         in flask terminal
     """
 
-    from models.product import Product, ProductListing, Platform, PriceHistory
-    # db.create_all()
+    from models.product import ProductListing, PriceHistory
+    db.create_all()
 
-    return dict(Product=Product, ProductListing=ProductListing, Platform=Platform, PriceHistory=PriceHistory)
+    return dict(ProductListing=ProductListing, PriceHistory=PriceHistory)
 
 
 if __name__ == '__main__':
