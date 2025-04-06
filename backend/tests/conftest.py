@@ -1,10 +1,16 @@
 import pytest
+import os
+from faker import Faker
+from config import TestConfig
+from product import ProductListing, PriceHistory, Base
+from app import db, app
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, clear_mappers
-from models.product import Base
-from models.product import ProductListing, PriceHistory
 
-from faker import Faker
+# Configure testing environment before app initialization
+os.environ['FLASK_ENV'] = 'testing'
+if os.environ.get('FLASK_ENV') == 'testing':
+    app.config.from_object(TestConfig)
 
 
 @pytest.fixture(scope="function")

@@ -1,6 +1,9 @@
-from models.product import ProductListing, PriceHistory
-from .test_conf import db_session, fake
+from product import ProductListing, PriceHistory
+from .conftest import db_session, fake
 from datetime import datetime
+
+
+print(hasattr(ProductListing, "product_name"))
 
 
 def test_listing_creation(db_session, fake):
@@ -11,7 +14,8 @@ def test_listing_creation(db_session, fake):
         url=fake.url(),
         current_price=round(fake.pyfloat(left_digits=3, right_digits=2, positive=True), 2),
         currency=fake.currency_code(),
-        search_text=" ".join(fake.words(nb=3))
+        search_text=" ".join(fake.words(nb=3)),
+        created_at=datetime.utcnow()
     )
 
     db_session.add(listing)
@@ -31,7 +35,10 @@ def test_price_history_tracking(db_session, fake):
         url=fake.url(),
         current_price=round(fake.pyfloat(left_digits=3, right_digits=2, positive=True), 2),
         currency=fake.currency_code(),
-        search_text=" ".join(fake.words(3))
+        search_text=" ".join(fake.words(nb=3)),
+        created_at=datetime.utcnow()
+
+
     )
     db_session.add(listing)
     db_session.flush()  # Get listing.id before commit

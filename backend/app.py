@@ -1,17 +1,23 @@
 from flask import Flask
+from flask_cors import CORS
+import os
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-from models.product import Base
-from flask_cors import CORS
+from product import Base, ProductListing, PriceHistory
 
+# create and configure the app
+app = Flask(__name__, instance_relative_config=True)
 
-app = Flask(__name__)
 app.config.from_object(Config)
-
 db = SQLAlchemy(model_class=Base)
-# initialize
 db.init_app(app)
 CORS(app)
+
+# ensure the instance folder exists
+try:
+    os.makedirs(app.instance_path)
+except OSError:
+    pass
 
 
 @app.shell_context_processor
@@ -22,13 +28,10 @@ def make_shell_context():
         in flask terminal
     """
 
-    from models.product import ProductListing, PriceHistory
-    db.create_all()
+    # db.create_all()
 
     return dict(ProductListing=ProductListing, PriceHistory=PriceHistory)
 
 
 if __name__ == '__main__':
-    # with app.app_context():
-    #     db.create_all()
     app.run()

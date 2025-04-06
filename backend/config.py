@@ -9,3 +9,9 @@ class Config:
     os.environ.get('SECRET_KEY') or 'any complex string'
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'data.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+
+class TestConfig:
+    SQLALCHEMY_DATABASE_URI = 'sqlite:///:memory:'
+    TESTING = True
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
