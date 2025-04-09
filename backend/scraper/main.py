@@ -6,7 +6,7 @@ from selenium.webdriver.support import expected_conditions as EC
 import logging
 from amazon import get_product
 
-AMAZON = "https://amazon.ca"
+AMAZON = "https://amazon.com"
 ALIEXPRESS = "https://aliexpress.com"
 
 URLS = {
@@ -48,45 +48,62 @@ def search(metadata, driver, search_text):
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.TAG_NAME, "body"))
         )
+        logging.info("Search result success")
+
     else:
         raise Exception("Could not search: missing selectors.")
 
     return driver
 
 
-def get_products(driver, search_text, selector, get_product):
-    print("Retrieving products.")
-    product_divs = driver.find_elements(By.CSS_SELECTOR, selector)
-    valid_products = []
-    words = search_text.lower().split()
+# def get_products(driver, search_text, selector, get_product):
+#     print("Retrieving products.")
+#     product_divs = driver.find_elements(By.CSS_SELECTOR, selector)
+#     valid_products = []
+#     words = search_text.lower().split()
+#
+#     for div in product_divs:
+#         product = get_product(div)  # get_product should be sync
+#
+#         if not product.get("price") or not product.get("url"):
+#             continue
+#
+#         name = product.get("name", "").lower()
+#         if all(word in name for word in words):
+#             valid_products.append(product)
+#
+#     return valid_products
 
-    for div in product_divs:
-        product = get_product(div)  # get_product should be sync
 
-        if not product.get("price") or not product.get("url"):
-            continue
+def main(url, search_text):
+    metadata = URLS.get(url)
+    if not metadata:
+        print("Invalid URL.")
+        return
 
-        name = product.get("name", "").lower()
-        if all(word in name for word in words):
-            valid_products.append(product)
-
-    return valid_products
-
-
-def main():
     # test_driver = webdriver.Chrome()
     # Get the version of the Chrome browser being used
     # chrome_version = test_driver.capabilities['browserVersion']
     # print(chrome_version)
     # test_driver.close()
     options = Options()
+    # normal waits till entire page resources are downloaded
+    options.page_load_strategy = 'normal'
+    options.timeouts = {'script': 120000}
     # options.add_argument("--headless")
     options.add_argument(
         "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.7049.42 Safari/537.36")
     driver = webdriver.Chrome(options=options)
     try:
-        driver.get("https://google.com")
-        driver.implicitly_wait(15)
+        driver.get(url)
+        logging.info("Page load complete")
+        # search the loaded page
+        search_page = search(metadata, driver, search_text)
+
     finally:
         driver.quit()
 
+
+if __name__ == "__main__":
+    # test script
+    main(AMAZON, "ryzen 9 3950x")

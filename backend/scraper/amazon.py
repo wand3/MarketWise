@@ -1,10 +1,13 @@
 from asyncio import gather
 
 
-async def get_stock(product_div):
-    elements = await product_div.query_selector_all('.a-size-base')
-    filtered_elements = [element for element in elements if 'stock' in await element.inner_text()]
-    return filtered_elements
+def scroll_page(driver, pagination_div):
+    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+
+# async def get_stock(product_div):
+#     elements = await product_div.query_selector_all('.a-size-base')
+#     filtered_elements = [element for element in elements if 'stock' in await element.inner_text()]
+#     return filtered_elements
 
 
 async def get_product(product_div):
