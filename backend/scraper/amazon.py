@@ -1,10 +1,71 @@
+import random
+import time
+from bs4 import BeautifulSoup
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
+
+from logger import logger
 from asyncio import gather
 
 
-def scroll_page(driver, pagination_div):
-    driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+def get_stock(driver):
+    # Get the page content
+    html_code = driver.page_source
 
-# async def get_stock(product_div):
+    # get all searched products on each page scroll
+    soup = BeautifulSoup(html_code, 'html.parser')
+
+    # Find all divs with the specified class
+    all_divs = soup.find_all("div", attrs={"role": "listitem"})
+    logger.info(f"divs on scroll: {len(all_divs)}")
+
+    return all_divs
+
+
+# scroll to pagination part of page
+def scroll_page(driver):
+    logger.info("Scroll in")
+
+    # Wait for the search button to appear and click it
+    dismiss_button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.XPATH, '//input[@data-action-type="DISMISS"]'))
+    )
+    logger.info("dismiss success")
+
+    if dismiss_button:
+        dismiss_button.click()
+        logger.info("click success")
+
+    # Scroll to pagination
+    page_no = driver.find_element(By.PARTIAL_LINK_TEXT, "Next")
+    ActionChains(driver)\
+        .scroll_to_element(page_no)\
+        .perform()
+    logger.info("Next page button")
+
+    next_page = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "Next"))
+    )
+    # get all items using bs4
+    items = get_stock(driver)
+    logger.info(items)
+
+    if next_page:
+        ActionChains(driver) \
+            .move_to_element(next_page) \
+            .pause(5) \
+            .click()
+
+        logger.info("Next page button clicked")
+        time.sleep(5)
+        driver.implicitly_wait(random.randint(3, 6))  # seconds
+
+    logger.info("Scroll to bottom success")
+
+
+
 #     elements = await product_div.query_selector_all('.a-size-base')
 #     filtered_elements = [element for element in elements if 'stock' in await element.inner_text()]
 #     return filtered_elements

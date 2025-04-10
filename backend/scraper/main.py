@@ -1,10 +1,11 @@
+import random
+from logger import logger
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-import logging
-from amazon import get_product
+from amazon import scroll_page
 
 AMAZON = "https://amazon.com"
 ALIEXPRESS = "https://aliexpress.com"
@@ -14,6 +15,11 @@ URLS = {
         "search_field_query": 'input[name="field-keywords"]',
         "search_button_query": 'input[value="Go"]',
         "product_selector": "div.s-card-container"
+    },
+    ALIEXPRESS: {
+        "search_field_query": '',
+        "search_button_query": '',
+        "product_selector": ""
     }
 }
 
@@ -21,22 +27,23 @@ available_urls = URLS.keys()
 
 
 def search(metadata, driver, search_text):
-    logging.info(f"Searching for {search_text} on {driver.current_url}")
+    logger.info(f"Searching for {search_text} on {driver.current_url}")
 
     search_field_query = metadata.get("search_field_query")
     search_button_query = metadata.get("search_button_query")
 
     if search_field_query and search_button_query:
-        logging.info("Filling input field")
+        logger.info("Filling input field")
 
         # Wait for the search box to appear and type into it
         search_box = WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.CSS_SELECTOR, search_field_query))
         )
         search_box.clear()
+        driver.implicitly_wait(random.randint(3, 6))  # seconds
         search_box.send_keys(search_text)
 
-        logging.info("Pressing search button")
+        logger.info("Pressing search button")
 
         # Wait for the search button to appear and click it
         search_button = WebDriverWait(driver, 10).until(
@@ -48,7 +55,7 @@ def search(metadata, driver, search_text):
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.TAG_NAME, "body"))
         )
-        logging.info("Search result success")
+        logger.info("Search result success")
 
     else:
         raise Exception("Could not search: missing selectors.")
@@ -96,12 +103,17 @@ def main(url, search_text):
     driver = webdriver.Chrome(options=options)
     try:
         driver.get(url)
-        logging.info("Page load complete")
+        logger.info("Page load complete")
         # search the loaded page
         search_page = search(metadata, driver, search_text)
+        # scroll page results page
+        scroll_page(driver)
 
     finally:
-        driver.quit()
+        driver.implicitly_wait(30000)  # seconds
+
+        # driver.quit()
+
 
 
 if __name__ == "__main__":
