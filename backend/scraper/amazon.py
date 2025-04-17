@@ -5,9 +5,9 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 
 from logger import logger
-from asyncio import gather
 
 
 def get_stock(soup):
@@ -31,12 +31,29 @@ def get_product(driver):
     product_link = ''
 
     products = []
+    product = {}
     for item in listitems:
         product_image = item.find("img", class_="s-image")
+        product_name = item.find("h2", class_="a-size-medium")
+        product_link = item.find("a", class_="a-link-normal")
+        product_price = item.find("span", class_="a-offscreen")
+
+        if product_name:
+            name = product_name.text
+            product["product_name"] = name
+        if product_price:
+            price = product_price.text
+            product["product_price"] = price
         if product_image:
-            href = product_image.get('href')
-        logger.info(product_image)
-        products.append(product_image)
+            href = product_image.get('src')
+            product["image_url"] = href
+        if product_link:
+            href = product_link.get('href')
+            product["product_url"] = "/".join(href.split("/")[:4])
+
+        products.append(product)
+        logger.info(product)
+
     return products
 
 
@@ -60,61 +77,40 @@ def scroll_page(driver):
         .scroll_to_element(page_no)\
         .perform()
     logger.info("Next page button")
-
-    next_page = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "Next"))
-    )
-    # get all items using bs4
-    # items = get_stock(driver)
-    items = get_product(driver)
-
-    logger.info(items)
-
-    if next_page:
-        ActionChains(driver) \
-            .move_to_element(next_page) \
-            .pause(5) \
-            .click()
-
-        logger.info("Next page button clicked")
-        time.sleep(5)
-        driver.implicitly_wait(random.randint(3, 6))  # seconds
-
     logger.info("Scroll to bottom success")
 
+    # next_page = WebDriverWait(driver, 10).until(
+    #     EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "Next"))
+    # )
 
-#     elements = await product_div.query_selector_all('.a-size-base')
-#     filtered_elements = [element for element in elements if 'stock' in await element.inner_text()]
-#     return filtered_elements
+    # next button
+    # Wait for next button to be clickable
+    next_button = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable(
+            (By.CSS_SELECTOR, "a.s-pagination-next")
+        )
+    )
 
+    # Scroll into view and click
+    if next_button:
+        driver.execute_script("arguments[0].scrollIntoView();", next_button)
+        next_button.click()
+        logger.info("next page clicked")
+        time.sleep(5)
+    body = driver.find_element(By.TAG_NAME, "body")
+    body.send_keys(Keys.PAGE_DOWN)  # or Keys.ARROW_DOWN, Keys.END, etc.    # if next_button:
 
-# async def get_product(product_div):
-#     # Query for all elements at once
-#     image_element_future = product_div.query_selector('img.s-image')
-#     name_element_future = product_div.query_selector(
-#         'h2 a span')
-#     price_element_future = product_div.query_selector('span.a-offscreen')
-#     url_element_future = product_div.query_selector(
-#         'a.a-link-normal.s-no-hover.s-underline-text.s-underline-link-text.s-link-style.a-text-normal')
-#
-#     # Await all queries at once
-#     image_element, name_element, price_element, url_element = await gather(
-#         image_element_future,
-#         name_element_future,
-#         price_element_future,
-#         url_element_future,
-#         # get_stock(product_div)
-#     )
-#
-#     # Fetch all attributes and text at once
-#     image_url = await image_element.get_attribute('src') if image_element else None
-#     product_name = await name_element.inner_text() if name_element else None
-#     try:
-#         print((await price_element.inner_text()).replace("$", "").replace(",", "").strip())
-#         product_price = float((await price_element.inner_text()).replace("$", "").replace(",", "").strip()) if price_element else None
-#     except:
-#         product_price = None
-#     product_url = "/".join((await url_element.get_attribute('href')).split("/")[:4]) if url_element else None
-#     # stock = stock_element[0] if len(stock_element) > 0 else None
-#
-#     return {"img": image_url, "name": product_name, "price": product_price, "url": product_url}
+    # items = get_product(driver)
+
+    # logger.info(items)
+
+    # if next_page:
+    #     ActionChains(driver) \
+    #         .move_to_element(next_page) \
+    #         .pause(5) \
+    #         .click()
+
+    logger.info("Next page button clicked")
+    time.sleep(5)
+    driver.implicitly_wait(random.randint(3, 6))  # seconds
+

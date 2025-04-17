@@ -63,25 +63,6 @@ def search(metadata, driver, search_text):
     return driver
 
 
-# def get_products(driver, search_text, selector, get_product):
-#     print("Retrieving products.")
-#     product_divs = driver.find_elements(By.CSS_SELECTOR, selector)
-#     valid_products = []
-#     words = search_text.lower().split()
-#
-#     for div in product_divs:
-#         product = get_product(div)  # get_product should be sync
-#
-#         if not product.get("price") or not product.get("url"):
-#             continue
-#
-#         name = product.get("name", "").lower()
-#         if all(word in name for word in words):
-#             valid_products.append(product)
-#
-#     return valid_products
-
-
 def main(url, search_text):
     metadata = URLS.get(url)
     if not metadata:
@@ -113,7 +94,6 @@ def main(url, search_text):
         driver.implicitly_wait(30000)  # seconds
 
         # driver.quit()
-
 
 
 if __name__ == "__main__":
