@@ -1,3 +1,5 @@
+import json
+import os
 import random
 from logger import logger
 from selenium import webdriver
@@ -6,6 +8,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from amazon import scroll_page
+from aliexpress import get_stock, scroll_page_aliexpress
 
 AMAZON = "https://amazon.com"
 ALIEXPRESS = "https://aliexpress.com"
@@ -17,13 +20,20 @@ URLS = {
         "product_selector": "div.s-card-container"
     },
     ALIEXPRESS: {
-        "search_field_query": '',
-        "search_button_query": '',
+        "search_field_query": 'input[id="search-words"]',
+        "search_button_query": 'input[title="submit"]',
         "product_selector": ""
     }
 }
 
 available_urls = URLS.keys()
+
+
+def save_results(results):
+    data = {"results": results}
+    FILE = os.path.join("Scraper", "results.json")
+    with open(FILE, "w") as f:
+        json.dump(data, f)
 
 
 def search(metadata, driver, search_text):
@@ -63,7 +73,7 @@ def search(metadata, driver, search_text):
     return driver
 
 
-def main(url, search_text):
+def main(url, search_text, endpoint):
     metadata = URLS.get(url)
     if not metadata:
         print("Invalid URL.")
@@ -74,6 +84,7 @@ def main(url, search_text):
     # chrome_version = test_driver.capabilities['browserVersion']
     # print(chrome_version)
     # test_driver.close()
+
     options = Options()
     # normal waits till entire page resources are downloaded
     options.page_load_strategy = 'normal'
@@ -87,8 +98,14 @@ def main(url, search_text):
         logger.info("Page load complete")
         # search the loaded page
         search_page = search(metadata, driver, search_text)
+
         # scroll page results page
-        scroll_page(driver)
+        if AMAZON:
+            amzn = scroll_page(driver)
+            save_results(amzn)
+        else:
+            ali = scroll_page_aliexpress(driver)
+            save_results(ali)
 
     finally:
         driver.implicitly_wait(30000)  # seconds
@@ -99,3 +116,4 @@ def main(url, search_text):
 if __name__ == "__main__":
     # test script
     main(AMAZON, "ryzen 9 3950x")
+    main(ALIEXPRESS, "ryzen 9 3950x")

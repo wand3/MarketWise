@@ -315,3 +315,43 @@
 2025-04-16 15:01:07,884 - INFO - click success
 2025-04-16 15:01:08,314 - INFO - Next page button
 2025-04-16 15:01:08,314 - INFO - Scroll to bottom success
+2025-04-19 12:53:29,123 - INFO - Page load complete
+2025-04-19 12:53:29,192 - INFO - Searching for ryzen 9 3950x on https://www.aliexpress.com/
+2025-04-19 12:53:29,193 - INFO - Filling input field
+2025-04-19 12:53:30,059 - INFO - Pressing search button
+2025-04-19 12:58:55,987 - INFO - Page load complete
+2025-04-19 12:59:16,544 - INFO - Page load complete
+2025-04-19 13:01:16,558 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=50019): Read timed out. (read timeout=120)")': /session/83b65f55914ac5d164734dab6f3a267d/url
+2025-04-19 13:03:16,568 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPConnectionPool(host='localhost', port=50019): Read timed out. (read timeout=120)")': /session/83b65f55914ac5d164734dab6f3a267d/url
+2025-04-19 13:04:16,732 - INFO - Searching for ryzen 9 3950x on https://www.aliexpress.com/
+2025-04-19 13:04:16,737 - INFO - Filling input field
+2025-04-19 13:04:52,266 - INFO - Page load complete
+2025-04-19 13:04:52,321 - INFO - Searching for ryzen 9 3950x on https://www.aliexpress.com/
+2025-04-19 13:04:52,327 - INFO - Filling input field
+2025-04-19 13:17:00,960 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10daf9e50>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/60f0bfee95a2abbbcb58fd466f507acf/timeouts
+2025-04-19 13:17:00,982 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10dafa750>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/60f0bfee95a2abbbcb58fd466f507acf/timeouts
+2025-04-19 13:17:00,988 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10dafb250>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/60f0bfee95a2abbbcb58fd466f507acf/timeouts
+2025-04-19 13:18:45,551 - INFO - Page load complete
+2025-04-19 13:18:45,588 - INFO - Searching for ryzen 9 3950x on https://www.aliexpress.com/
+2025-04-19 13:18:45,589 - INFO - Filling input field
+2025-04-19 13:26:45,347 - WARNING - Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10c3f5fd0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/dcb16d31a17ca6264b4420214ce4ece9/timeouts
+2025-04-19 13:26:45,355 - WARNING - Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10c3f69d0>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/dcb16d31a17ca6264b4420214ce4ece9/timeouts
+2025-04-19 13:26:45,359 - WARNING - Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10c3f7410>: Failed to establish a new connection: [Errno 61] Connection refused')': /session/dcb16d31a17ca6264b4420214ce4ece9/timeouts
+2025-04-19 13:33:14,550 - INFO - Page load complete
+2025-04-19 13:33:14,655 - INFO - Searching for ryzen 9 3950x on data:,
+2025-04-19 13:33:14,655 - INFO - Filling input field
+2025-04-19 13:34:26,849 - INFO - {'search_field_query': 'input[name="field-keywords"]', 'search_button_query': 'input[value="Go"]', 'product_selector': 'div.s-card-container'}
+2025-04-19 13:34:31,451 - INFO - Page load complete
+2025-04-19 13:34:31,544 - INFO - Searching for ryzen 9 3950x on data:,
+2025-04-19 13:34:31,548 - INFO - Filling input field
+2025-04-19 13:35:46,254 - INFO - Page load complete
+2025-04-19 13:35:46,297 - INFO - Searching for ryzen 9 3950x on data:,
+2025-04-19 13:35:46,297 - INFO - Filling input field
+2025-04-19 13:36:40,189 - INFO - Page load complete
+2025-04-19 13:36:40,258 - INFO - Searching for ryzen 9 3950x on data:,
+2025-04-19 13:36:40,258 - INFO - Filling input field
+2025-04-19 13:37:18,486 - INFO - https://amazon.com
+2025-04-19 13:37:23,355 - INFO - Page load complete
+2025-04-19 13:37:23,388 - INFO - Searching for ryzen 9 3950x on data:,
+2025-04-19 13:37:23,388 - INFO - Filling input field
+2025-04-19 13:39:24,859 - INFO - check aiit

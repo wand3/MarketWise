@@ -26,17 +26,13 @@ def get_product(driver):
     listitems = get_stock(soup)
     # logger.info(listitems)
 
-    product_name_element = ''
-    product_price_element = ''
-    product_link = ''
-
     products = []
     product = {}
     for item in listitems:
-        product_image = item.find("img", class_="s-image")
-        product_name = item.find("h2", class_="a-size-medium")
-        product_link = item.find("a", class_="a-link-normal")
-        product_price = item.find("span", class_="a-offscreen")
+        product_image = item.find("img", class_="mj_en")
+        product_name = item.find("h3", class_="jt_kr")
+        product_link = item.find("a", class_="search-card-item")
+        product_price = item.find("div", class_="jt_kt")
 
         if product_name:
             name = product_name.text
@@ -50,7 +46,7 @@ def get_product(driver):
         if product_link:
             href = product_link.get('href')
             product["product_url"] = "/".join(href.split("/")[:4])
-
+        product["source"] = "Aliexpress"
         products.append(product)
         logger.info(product)
 
@@ -100,7 +96,7 @@ def scroll_page(driver):
     body = driver.find_element(By.TAG_NAME, "body")
     body.send_keys(Keys.PAGE_DOWN)  # or Keys.ARROW_DOWN, Keys.END, etc.    # if next_button:
 
-    # items = get_product(driver)
+    items = get_product(driver)
 
     # logger.info(items)
 
@@ -113,4 +109,7 @@ def scroll_page(driver):
     logger.info("Next page button clicked")
     time.sleep(5)
     driver.implicitly_wait(random.randint(3, 6))  # seconds
+    return items
+
+
 
