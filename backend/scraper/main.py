@@ -33,7 +33,17 @@ def save_results(results):
     data = {"results": results}
     FILE = os.path.join("Scraper", "results.json")
     with open(FILE, "w") as f:
-        json.dump(data, f)
+        json.dump([], f)
+    with open(FILE, "r+") as contents:
+        # load the existing data into a dict
+        file_date = json.load(contents)
+        # join new details (results) with file_date insinde emp_details
+        file_date["emp_details"].append(results)
+        # set files current posotion at offset
+        contents.seek(0)
+
+        # convert back to json
+        json.dump(file_date, contents, indent=4)
 
 
 def search(metadata, driver, search_text):
@@ -73,7 +83,7 @@ def search(metadata, driver, search_text):
     return driver
 
 
-def main(url, search_text, endpoint):
+def main(url, search_text):
     metadata = URLS.get(url)
     if not metadata:
         print("Invalid URL.")
@@ -102,18 +112,17 @@ def main(url, search_text, endpoint):
         # scroll page results page
         if AMAZON:
             amzn = scroll_page(driver)
-            save_results(amzn)
+            # save_results(amzn)
         else:
             ali = scroll_page_aliexpress(driver)
-            save_results(ali)
+            # save_results(ali)
 
     finally:
         driver.implicitly_wait(30000)  # seconds
-
-        # driver.quit()
+        driver.quit()
 
 
 if __name__ == "__main__":
     # test script
     main(AMAZON, "ryzen 9 3950x")
-    main(ALIEXPRESS, "ryzen 9 3950x")
+    # main(ALIEXPRESS, "ryzen 9 3950x")

@@ -6,7 +6,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-
+from ..scraper.main import save_results
 from logger import logger
 
 
@@ -26,13 +26,17 @@ def get_product(driver):
     listitems = get_stock(soup)
     # logger.info(listitems)
 
-    products = []
+    product_name_element = ''
+    product_price_element = ''
+    product_link = ''
+
+    # products = []
     product = {}
     for item in listitems:
-        product_image = item.find("img", class_="mj_en")
-        product_name = item.find("h3", class_="jt_kr")
-        product_link = item.find("a", class_="search-card-item")
-        product_price = item.find("div", class_="jt_kt")
+        product_image = item.find("img", class_="s-image")
+        product_name = item.find("h2", class_="a-size-medium")
+        product_link = item.find("a", class_="a-link-normal")
+        product_price = item.find("span", class_="a-offscreen")
 
         if product_name:
             name = product_name.text
@@ -46,11 +50,11 @@ def get_product(driver):
         if product_link:
             href = product_link.get('href')
             product["product_url"] = "/".join(href.split("/")[:4])
-        product["source"] = "Aliexpress"
-        products.append(product)
+        product["source"] = "Amazon"
+        # products.append(product)
         logger.info(product)
-
-    return products
+        save_results({product})
+    # return products
 
 
 # scroll to pagination part of page
@@ -65,51 +69,56 @@ def scroll_page(driver):
 
     if dismiss_button:
         dismiss_button.click()
-        logger.info("click success")
+        logger.info("click dismiss success")
 
-    # Scroll to pagination
-    page_no = driver.find_element(By.PARTIAL_LINK_TEXT, "Next")
-    ActionChains(driver)\
-        .scroll_to_element(page_no)\
-        .perform()
-    logger.info("Next page button")
-    logger.info("Scroll to bottom success")
-
-    # next_page = WebDriverWait(driver, 10).until(
-    #     EC.element_to_be_clickable((By.PARTIAL_LINK_TEXT, "Next"))
-    # )
-
-    # next button
     # Wait for next button to be clickable
-    next_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, "a.s-pagination-next")
-        )
-    )
+    pages = 0
+    while pages < 2:
+        try:
+            # Scroll to pagination
+            page_no = driver.find_element(By.PARTIAL_LINK_TEXT, "Next")
+            ActionChains(driver) \
+                .scroll_to_element(page_no) \
+                .perform()
+            logger.info("Scroll to Next success")
 
-    # Scroll into view and click
-    if next_button:
-        driver.execute_script("arguments[0].scrollIntoView();", next_button)
-        next_button.click()
-        logger.info("next page clicked")
-        time.sleep(5)
-    body = driver.find_element(By.TAG_NAME, "body")
-    body.send_keys(Keys.PAGE_DOWN)  # or Keys.ARROW_DOWN, Keys.END, etc.    # if next_button:
+            # isDisabled = False
+            next_button = WebDriverWait(driver, 10).until(
+                EC.presence_of_element_located(
+                    (By.PARTIAL_LINK_TEXT, "Next")
+                )
+            )
 
-    items = get_product(driver)
+            if next_button:
+                logger.info("Next button seen")
+                ActionChains(driver) \
+                    .move_to_element(next_button) \
+                    .click().perform()
 
-    # logger.info(items)
+            items = get_product(driver)
+            logger.info(items)
 
-    # if next_page:
-    #     ActionChains(driver) \
-    #         .move_to_element(next_page) \
-    #         .pause(5) \
-    #         .click()
+            next_class = next_button.get_attribute('class')
+            logger.info(next_class)
 
-    logger.info("Next page button clicked")
-    time.sleep(5)
-    driver.implicitly_wait(random.randint(3, 6))  # seconds
-    return items
+            if 'disabled' in next_class:
+                # isDisabled = True
+                break
+            next_page = driver.find_element(By.CSS_SELECTOR, 's-pagination-next')
+            next_page.click()
+            logger.info("Next page button clicked")
+            pages += 1
+        except Exception as e:
+            logger.error(e)
+
+    # # Scroll into view and click
+    # if next_button:
+    #     driver.execute_script("arguments[0].scrollIntoView();", next_button)
+    #     next_button.click()
+    #     logger.info("next page clicked")
+    #     time.sleep(5)
+    # body = driver.find_element(By.TAG_NAME, "body")
+    # body.send_keys(Keys.PAGE_DOWN)  # or Keys.ARROW_DOWN, Keys.END, etc.    # if next_button:
 
 
 
