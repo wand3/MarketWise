@@ -1,5 +1,6 @@
 backend/models/__py*/
 backend/tests/__py*/
+backend/scraper/__py*/
 backend/__py*/
 
 .env
