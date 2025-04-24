@@ -2,6 +2,7 @@ from .main import main
 import sys
 import asyncio
 
+
 if __name__ == '__main__':
     # Extract command-line arguments
     if len(sys.argv) < 3:
@@ -13,7 +14,7 @@ if __name__ == '__main__':
     endpoint = sys.argv[3]
 
     # Run the scraper asynchronously
-    asyncio.run(main(url, search_text, endpoint))
+    asyncio.run(main(url, search_text))
 
 if __name__ == "__main__":
     main()

@@ -29,23 +29,6 @@ URLS = {
 available_urls = URLS.keys()
 
 
-def save_results(results):
-    data = {"results": results}
-    FILE = os.path.join("Scraper", "results.json")
-    with open(FILE, "w") as f:
-        json.dump([], f)
-    with open(FILE, "r+") as contents:
-        # load the existing data into a dict
-        file_date = json.load(contents)
-        # join new details (results) with file_date insinde emp_details
-        file_date["emp_details"].append(results)
-        # set files current posotion at offset
-        contents.seek(0)
-
-        # convert back to json
-        json.dump(file_date, contents, indent=4)
-
-
 def search(metadata, driver, search_text):
     logger.info(f"Searching for {search_text} on {driver.current_url}")
 
