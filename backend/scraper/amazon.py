@@ -1,6 +1,9 @@
 import asyncio
 import random
 import time
+
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
@@ -12,6 +15,53 @@ import json
 import os
 
 logger = setup_logger("amazon", "DEBUG", "scraper.log")
+delay = random.uniform(3, 6)
+
+AMAZON = "https://amazon.com"
+
+URLS = {
+    AMAZON: {
+        "search_field_query": 'input[name="field-keywords"]',
+        "search_button_query": 'input[value="Go"]',
+        "product_selector": "div.s-card-container"
+    }
+}
+
+
+def search(metadata, driver, search_text):
+    logger.info(f"Searching for {search_text} on {driver.current_url}")
+
+    search_field_query = metadata.get("search_field_query")
+    search_button_query = metadata.get("search_button_query")
+
+    if search_field_query and search_button_query:
+        logger.info("Filling input field")
+
+        # Wait for the search box to appear and type into it
+        search_box = WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CSS_SELECTOR, search_field_query))
+        )
+        search_box.clear()
+        driver.implicitly_wait(random.randint(3, 6))  # seconds
+        search_box.send_keys(search_text)
+
+        logger.info("Pressing search button")
+
+        # Wait for the search button to appear and click it
+        search_button = WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CSS_SELECTOR, search_button_query))
+        )
+        search_button.click()
+
+        # Wait for the page to load (basic wait, can be customized)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, "body"))
+        )
+        logger.info("Search result success")
+    else:
+        raise Exception("Could not search: missing selectors.")
+
+    return driver
 
 
 def save_results(results):
@@ -26,13 +76,11 @@ def save_results(results):
         file_date["emp_details"].append(results)
         # set files current posotion at offset
         contents.seek(0)
-
         # convert back to json
         json.dump(file_date, contents, indent=4)
 
 
 def get_stock(soup):
-
     # Find all divs with the specified class
     all_divs = soup.find_all("div", attrs={"role": "listitem"})
     logger.info(f"divs on scroll: {len(all_divs)}")
@@ -48,11 +96,7 @@ def get_product(driver):
     listitems = get_stock(soup)
     # logger.info(listitems)
 
-    product_name_element = ''
-    product_price_element = ''
-    product_link = ''
-
-    # products = []
+    products = []
     product = {}
     for item in listitems:
         product_image = item.find("img", class_="s-image")
@@ -73,10 +117,14 @@ def get_product(driver):
             href = product_link.get('href')
             product["product_url"] = "/".join(href.split("/")[:4])
         product["source"] = "Amazon"
-        # products.append(product)
-        logger.info(product)
-        save_results({product})
-    return product
+        logger.info(f'Each product in page {product}')
+
+        products.append(product)
+    logger.info(f'All product in page {len(products)}')
+    logger.info(f'All product in page {products}')
+
+    # save_results({products})
+    return products
 
 
 # scroll to pagination part of page
@@ -95,33 +143,34 @@ def scroll_page(driver):
                 dismiss_button.click()
                 logger.info("click dismiss success")
         except Exception as e:
-            logger.error(f"failed button {e}")
+            pass
             # Wait for next button to be clickable
         finally:
-            while True:
+            scroll_count = 15
+            height = 0
+            for i in range(scroll_count):
                 try:
-                    driver.execute_script(f"window.scrollBy(0, document.body.scrollHeight);")  # Scrolls down 500px
+                    time.sleep(delay)
+
+                    driver.execute_script(f"window.scrollBy({height}, 200);")  # Scrolls down 500px
+                    height += (height + (i * height))
 
                     # Scroll to pagination
-                    page_no = driver.find_element(By.CSS_SELECTOR, "a.s-pagination-next")
-                    ActionChains(driver) \
-                        .scroll_to_element(page_no) \
-                        .perform()
-                    logger.info("Scroll to Next success")
+                    page_next = driver.find_element(By.CSS_SELECTOR, "a.s-pagination-next")
 
                     # isDisabled = False
-                    next_button = WebDriverWait(driver, 10).until(
-                        EC.presence_of_element_located(
-                            (By.CSS_SELECTOR, "a.s-pagination-next")
-                        )
-                    )
-                    items = get_product(driver)
-                    logger.info(f'{items}')
-
-                    if next_button:
-                        logger.info("Next button seen")
+                    if page_next:
                         ActionChains(driver) \
-                            .move_to_element(next_button) \
+                            .scroll_to_element(page_next) \
+                            .perform()
+                        logger.info("Scroll to Next success")
+                        # get all products in page
+                        items = get_product(driver)
+                        logger.info(f'{items}')
+
+                        logger.info("Items collected Next button seen")
+                        ActionChains(driver) \
+                            .move_to_element(page_next) \
                             .click().perform()
 
                     # isDisabled = False
@@ -132,11 +181,46 @@ def scroll_page(driver):
                     )
                     next_class = next_end.get_attribute('class')
                     logger.info(next_class)
-
                     if 'disabled' in next_class:
+                        items = get_product(driver)
+                        return items
                         # isDisabled = True
-                        break
 
                     logger.info("Next page button clicked")
                 except Exception as e:
                     logger.error(f'last {e}')
+
+
+def main_amazon(url, search_text):
+    metadata = URLS.get(url)
+    if not metadata:
+        print("Invalid URL.")
+        return
+
+    # test_driver = webdriver.Chrome()
+    # Get the version of the Chrome browser being used
+    # chrome_version = test_driver.capabilities['browserVersion']
+    # print(chrome_version)
+    # test_driver.close()
+
+    options = Options()
+    # normal waits till entire page resources are downloaded
+    options.page_load_strategy = 'normal'
+    options.timeouts = {'script': 120000}
+    # options.add_argument("--headless")
+    options.add_argument(
+        "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.7049.42 Safari/537.36")
+    driver = webdriver.Chrome(options=options)
+    try:
+        driver.get(url)
+        logger.info("Page load complete")
+        # search the loaded page
+        search_page = search(metadata, driver, search_text)
+        # scroll page results page
+        amzn = scroll_page(driver)
+        logger.info(amzn)
+    except Exception as e:
+        logger.error(e)
+    finally:
+        driver.implicitly_wait(30000)  # seconds
+        driver.quit()
