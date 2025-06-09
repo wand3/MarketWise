@@ -1,14 +1,11 @@
+import argparse
+import asyncio
 import json
 import os
 import random
 from logger import setup_logger
-from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from amazon import main_amazon
-from aliexpress import get_stock, scroll_page_aliexpress
+from amazon import scrape_amazon_async
+from aliexpress import scrape_aliexpress_async
 
 
 logger = setup_logger("main", "DEBUG", "scraper.log")
@@ -32,50 +29,27 @@ URLS = {
 available_urls = URLS.keys()
 
 
-
-# def main(url, search_text):
-#     metadata = URLS.get(url)
-#     if not metadata:
-#         print("Invalid URL.")
-#         return
-#
-#     # test_driver = webdriver.Chrome()
-#     # Get the version of the Chrome browser being used
-#     # chrome_version = test_driver.capabilities['browserVersion']
-#     # print(chrome_version)
-#     # test_driver.close()
-#
-#     options = Options()
-#     # normal waits till entire page resources are downloaded
-#     options.page_load_strategy = 'normal'
-#     options.timeouts = {'script': 120000}
-#     # options.add_argument("--headless")
-#     options.add_argument(
-#         "user-agent=Mozilla/5.0 (Macintosh; Intel Mac OS X 12_0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.7049.42 Safari/537.36")
-#     driver = webdriver.Chrome(options=options)
-#     try:
-#         driver.get(url)
-#         logger.info("Page load complete")
-#         # search the loaded page
-#         search_page = search(metadata, driver, search_text)
-#         # scroll page results page
-#         if url == 'AMAZON':
-#             amzn = scroll_page(driver)
-#             logger.info(amzn)
-#
-#             # save_results(amzn)
-#         else:
-#             ali = scroll_page_aliexpress(driver)
-#             # save_results(ali)
-#     finally:
-#         driver.implicitly_wait(30000)  # seconds
-#         driver.quit()
+async def run_scrapers_async(search):
+    aliexpress_data = await scrape_aliexpress_async(search)
+    amazon_data = await scrape_amazon_async(search)
 
 
-def run_scrapers_async():
-    data = main_amazon(AMAZON, 'ryback')
+def parse_arguments():
+    """Parse command-line arguments"""
+    parser = argparse.ArgumentParser(description='Run product scrapers with custom search terms')
+    parser.add_argument(
+        '--search',
+        nargs='+',
+        required=True,
+        help='item to be searched'
+    )
+    return parser.parse_args()
 
 
 if __name__ == "__main__":
-    main_amazon(AMAZON, 'ryback')
-   # run_scrapers_async()
+    args = parse_arguments()
+    print(f"Starting scrapers for search terms: {', '.join(args.search)}")
+
+    # Run the async scraper
+    asyncio.run(run_scrapers_async(args.search))
+

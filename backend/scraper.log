@@ -1,0 +1,567 @@
+DEBUG: 2025-06-09 11:53:57,616 INFO: Page load complete
+DEBUG: 2025-06-09 11:53:57,879 INFO: Searching for ['wireless headphones'] on https://www.amazon.com/
+DEBUG: 2025-06-09 11:53:57,879 INFO: Filling input field
+DEBUG: 2025-06-09 11:53:58,412 INFO: Pressing search button
+DEBUG: 2025-06-09 11:54:03,452 INFO: Search result success
+DEBUG: 2025-06-09 11:54:03,454 INFO: Scroll in
+DEBUG: 2025-06-09 11:54:03,559 INFO: dismiss success
+DEBUG: 2025-06-09 11:54:03,859 INFO: click dismiss success
+DEBUG: 2025-06-09 11:54:08,225 INFO: Scroll to Next success
+DEBUG: 2025-06-09 11:54:09,673 INFO: divs on scroll: 22
+DEBUG: 2025-06-09 11:54:09,687 INFO: New product added: Wireless Earbuds Bluetooth Headphones, Ear Buds with Deep Bass, 40H Long Playtime, LED Power Display, IP7 in Ear Earphone with Mic for iPhone Android Phone Sports Workout, Black
+DEBUG: 2025-06-09 11:54:09,688 INFO: New product added: Soundcore Anker Life Q20 Hybrid Active Noise Cancelling Headphones, Wireless Over Ear Bluetooth Headphones, 60H Playtime, Hi-Res Audio, Deep Bass, Memory Foam Ear Cups, Travel, Office, USB-C Charging
+DEBUG: 2025-06-09 11:54:09,689 INFO: New product added: Bulk Headphones for Kids Multi Color Headphones for School Classroom Students Teen Boys Girls and Adult (30 Pack)
+DEBUG: 2025-06-09 11:54:09,691 INFO: New product added: JBL Tune 510BT - Bluetooth headphones with up to 40 hours battery, microphone for call, foldable and comfortable, Android and iOs compatible (Blue)
+DEBUG: 2025-06-09 11:54:09,691 INFO: New product added: Hybrid Active Noise Cancelling Headphones, Wireless Over Ear Bluetooth Headphones, Foldable Wireless Headset, 60H Playtime, Hi-Res Audio, Deep Bass, Memory Foam Ear Cups, Perfect for Travel & Office
+DEBUG: 2025-06-09 11:54:09,692 INFO: Duplicate skipped: JBL Vibe Beam - True Wireless JBL Deep Bass Sound Earbuds, Bluetooth 5.2, Water & Dust Resistant, Hands-free call with VoiceAware, Up to 32 hours of battery life (Black)
+DEBUG: 2025-06-09 11:54:09,692 INFO: New product added: Sony WH-CH720N Noise Canceling Wireless Headphones Bluetooth Over The Ear Headset with Microphone and Alexa Built-in, Black New
+DEBUG: 2025-06-09 11:54:09,693 INFO: New product added: KVIDIO Bluetooth Headphones Over Ear, 65 Hours Playtime Wireless Headphones with Microphone, Foldable Lightweight Headset with Deep Bass, HiFi Stereo Sound for Travel Work Cellphone
+DEBUG: 2025-06-09 11:54:09,693 INFO: New product added: Sony WH-CH520 Wireless Headphones Bluetooth On-Ear Headset with Microphone, Black New
+DEBUG: 2025-06-09 11:54:09,694 INFO: New product added: JBL Tune 720BT - Wireless Over-Ear Headphones with JBL Pure Bass Sound, Bluetooth 5.3, Up to 76H Battery Life and Speed Charge, Lightweight, Comfortable and Foldable Design (Black)
+DEBUG: 2025-06-09 11:54:09,694 INFO: New product added: Wireless Earbuds, Bluetooth 5.4 Headphones, True Wireless Stereo Earphones with IPX7 Waterproof, Noise Cancelling Mic, Fast Charging and Comfort Fit Ear Buds for Sports/Workouts - Black
+DEBUG: 2025-06-09 11:54:09,694 INFO: New product added: Soundcore by Anker Q20i Hybrid Active Noise Cancelling Headphones, Wireless Over-Ear Bluetooth, 40H Long ANC Playtime, Hi-Res Audio, Big Bass, Customize via an App, Transparency Mode (White)
+DEBUG: 2025-06-09 11:54:09,695 INFO: New product added: Wireless Earbuds Bluetooth V5.3 Headphones 50H Playback Deep Bass Stereo Ear Buds with LED Power Display Charging Case IPX7 Waterproof Earphones with Mic Headset for Laptop Pad Android/iOS Phones
+DEBUG: 2025-06-09 11:54:09,695 INFO: New product added: Sony WH-1000XM4 Wireless Premium Noise Canceling Overhead Headphones with Mic for Phone-Call and Alexa Voice Control, Black WH1000XM4
+DEBUG: 2025-06-09 11:54:09,696 INFO: New product added: Wireless Earbuds, Bluetooth 5.4 Headphones in Ear with 4 ENC Noise Cancelling Mic, New Wireless Earphones HiFi Stereo Deep Bass 40H Playtime, In-Ear Bluetooth Earbuds LED Display IP7 Waterproof, USB-C
+DEBUG: 2025-06-09 11:54:09,696 INFO: New product added: Wireless Earbuds Bluetooth 5.4 Headphones 75H Stereo Deep Bass Sports Over Ear Buds with Earhooks, LED Display Bluetooth Earbuds with 4 ENC Mic, IP7 Waterproof Earphone for Running, Black
+DEBUG: 2025-06-09 11:54:09,697 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:09,698 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:09,699 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:09,699 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:09,699 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:09,700 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:09,718 INFO: Total products in file: 170
+DEBUG: 2025-06-09 11:54:09,718 INFO: New products added: 15
+DEBUG: 2025-06-09 11:54:09,719 INFO: [{'product_name': 'Wireless Earbuds Bluetooth Headphones, Ear Buds with Deep Bass, 40H Long Playtime, LED Power Display, IP7 in Ear Earphone with Mic for iPhone Android Phone Sports Workout, Black', 'product_price': '$199.99', 'image_url': 'https://m.media-amazon.com/images/I/61L3fsy1EwL._AC_UY218_.jpg', 'product_url': '/HUIFU-Wireless-Bluetooth-Headphones-Playtime/dp/B0F3CZM9DL', 'source': 'Amazon'}, {'product_name': 'Soundcore Anker Life Q20 Hybrid Active Noise Cancelling Headphones, Wireless Over Ear Bluetooth Headphones, 60H Playtime, Hi-Res Audio, Deep Bass, Memory Foam Ear Cups, Travel, Office, USB-C Charging', 'product_price': '$39.99', 'image_url': 'https://m.media-amazon.com/images/I/61OHplw85eL._AC_UY218_.jpg', 'product_url': '/Soundcore-Cancelling-Headphones-Wireless-Bluetooth/dp/B0DLKB5V35', 'source': 'Amazon'}, {'product_name': 'Bulk Headphones for Kids Multi Color Headphones for School Classroom Students Teen Boys Girls and Adult (30 Pack)', 'product_price': '$39.99', 'image_url': 'https://m.media-amazon.com/images/I/81ejTpLTVoL._AC_UY218_.jpg', 'product_url': '/WAHUWAY-Headphones-School-Classroom-Students/dp/B0DZNW9YTS', 'source': 'Amazon'}, {'product_name': 'JBL Tune 510BT - Bluetooth headphones with up to 40 hours battery, microphone for call, foldable and comfortable, Android and iOs compatible (Blue)', 'product_price': 'N/A', 'image_url': 'https://m.media-amazon.com/images/I/61FUX7QmifS._AC_UY218_.jpg', 'product_url': '/JBL-Tune-510BT-Ear-Headphones/dp/B08WM1V5P1', 'source': 'Amazon'}, {'product_name': 'Hybrid Active Noise Cancelling Headphones, Wireless Over Ear Bluetooth Headphones, Foldable Wireless Headset, 60H Playtime, Hi-Res Audio, Deep Bass, Memory Foam Ear Cups, Perfect for Travel & Office', 'product_price': '$38.99', 'image_url': 'https://m.media-amazon.com/images/I/61JYOW4SL5L._AC_UY218_.jpg', 'product_url': '/Cancelling-Headphones-Wireless-Bluetooth-Foldable/dp/B0DXFFKN1W', 'source': 'Amazon'}, {'product_name': 'Sony WH-CH720N Noise Canceling Wireless Headphones Bluetooth Over The Ear Headset with Microphone and Alexa Built-in, Black New', 'product_price': 'N/A', 'image_url': 'https://m.media-amazon.com/images/I/51rpbVmi9XL._AC_UY218_.jpg', 'product_url': '/Sony-WH-CH720N-Canceling-Headphones-Microphone/dp/B0BS1QCFHX', 'source': 'Amazon'}, {'product_name': 'KVIDIO Bluetooth Headphones Over Ear, 65 Hours Playtime Wireless Headphones with Microphone, Foldable Lightweight Headset with Deep Bass, HiFi Stereo Sound for Travel Work Cellphone', 'product_price': '$18.84', 'image_url': 'https://m.media-amazon.com/images/I/71Hx8b6HGbL._AC_UY218_.jpg', 'product_url': '/Bluetooth-Headphones-KVIDIO-Microphone-Lightweight/dp/B09BF64J55', 'source': 'Amazon'}, {'product_name': 'Sony WH-CH520 Wireless Headphones Bluetooth On-Ear Headset with Microphone, Black New', 'product_price': 'N/A', 'image_url': 'https://m.media-amazon.com/images/I/41lArSiD5hL._AC_UY218_.jpg', 'product_url': '/Sony-WH-CH520-Headphones-Bluetooth-Microphone/dp/B0BS1PRC4L', 'source': 'Amazon'}, {'product_name': 'JBL Tune 720BT - Wireless Over-Ear Headphones with JBL Pure Bass Sound, Bluetooth 5.3, Up to 76H Battery Life and Speed Charge, Lightweight, Comfortable and Foldable Design (Black)', 'product_price': '$79.95', 'image_url': 'https://m.media-amazon.com/images/I/61EL2AKKcBL._AC_UY218_.jpg', 'product_url': '/JBL-TUNE-720BT-Lightweight-comfortable/dp/B0CTBCDD6D', 'source': 'Amazon'}, {'product_name': 'Wireless Earbuds, Bluetooth 5.4 Headphones, True Wireless Stereo Earphones with IPX7 Waterproof, Noise Cancelling Mic, Fast Charging and Comfort Fit Ear Buds for Sports/Workouts - Black', 'product_price': '$19.99', 'image_url': 'https://m.media-amazon.com/images/I/71aX4h-61gL._AC_UY218_.jpg', 'product_url': '/TRAUSI-Bluetooth-Headphones-Waterproof-Cancelling/dp/B0F5WSRXWW', 'source': 'Amazon'}, {'product_name': 'Soundcore by Anker Q20i Hybrid Active Noise Cancelling Headphones, Wireless Over-Ear Bluetooth, 40H Long ANC Playtime, Hi-Res Audio, Big Bass, Customize via an App, Transparency Mode (White)', 'product_price': '$49.99', 'image_url': 'https://m.media-amazon.com/images/I/51FfiLFD2oL._AC_UY218_.jpg', 'product_url': '/Soundcore-Cancelling-Headphones-Bluetooth-Transparency/dp/B0CQXMXJC5', 'source': 'Amazon'}, {'product_name': 'Wireless Earbuds Bluetooth V5.3 Headphones 50H Playback Deep Bass Stereo Ear Buds with LED Power Display Charging Case IPX7 Waterproof Earphones with Mic Headset for Laptop Pad Android/iOS Phones', 'product_price': '$6.99', 'image_url': 'https://m.media-amazon.com/images/I/61MbQE+iLpL._AC_UY218_.jpg', 'product_url': '/Wireless-Bluetooth-Headphones-Waterproof-Earphones/dp/B0DPHV235S', 'source': 'Amazon'}, {'product_name': 'Sony WH-1000XM4 Wireless Premium Noise Canceling Overhead Headphones with Mic for Phone-Call and Alexa Voice Control, Black WH1000XM4', 'product_price': '$228.00', 'image_url': 'https://m.media-amazon.com/images/I/61oqO1AMbdL._AC_UY218_.jpg', 'product_url': '/Sony-WH-1000XM4-Canceling-Headphones-phone-call/dp/B0863TXGM3', 'source': 'Amazon'}, {'product_name': 'Wireless Earbuds, Bluetooth 5.4 Headphones in Ear with 4 ENC Noise Cancelling Mic, New Wireless Earphones HiFi Stereo Deep Bass 40H Playtime, In-Ear Bluetooth Earbuds LED Display IP7 Waterproof, USB-C', 'product_price': '$21.99', 'image_url': 'https://m.media-amazon.com/images/I/61aFcD5ju9L._AC_UY218_.jpg', 'product_url': '/Bluetooth-Headphones-Cancelling-Earphones-Waterproof/dp/B0F2MT5MPQ', 'source': 'Amazon'}, {'product_name': 'Wireless Earbuds Bluetooth 5.4 Headphones 75H Stereo Deep Bass Sports Over Ear Buds with Earhooks, LED Display Bluetooth Earbuds with 4 ENC Mic, IP7 Waterproof Earphone for Running, Black', 'product_price': '$23.99', 'image_url': 'https://m.media-amazon.com/images/I/71OoKPGFrwL._AC_UY218_.jpg', 'product_url': '/Qecnato-Wireless-Bluetooth-Headphones-Waterproof/dp/B0F4D562YR', 'source': 'Amazon'}]
+DEBUG: 2025-06-09 11:54:09,719 INFO: Items collected Next button seen
+DEBUG: 2025-06-09 11:54:10,296 ERROR: last Message: stale element reference: stale element not found in the current frame
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Stacktrace:
+0   chromedriver                        0x000000010593e728 chromedriver + 5891880
+1   chromedriver                        0x0000000105935e7a chromedriver + 5856890
+2   chromedriver                        0x0000000105406400 chromedriver + 418816
+3   chromedriver                        0x000000010540d17e chromedriver + 446846
+4   chromedriver                        0x000000010540fe87 chromedriver + 458375
+5   chromedriver                        0x00000001054a70a6 chromedriver + 1077414
+6   chromedriver                        0x000000010547e4e2 chromedriver + 910562
+7   chromedriver                        0x00000001054a6073 chromedriver + 1073267
+8   chromedriver                        0x000000010547e2b3 chromedriver + 910003
+9   chromedriver                        0x000000010544a507 chromedriver + 697607
+10  chromedriver                        0x000000010544b171 chromedriver + 700785
+11  chromedriver                        0x00000001058fc4d0 chromedriver + 5620944
+12  chromedriver                        0x000000010590045f chromedriver + 5637215
+13  chromedriver                        0x00000001058d78e2 chromedriver + 5470434
+14  chromedriver                        0x0000000105900dcf chromedriver + 5639631
+15  chromedriver                        0x00000001058c60a4 chromedriver + 5398692
+16  chromedriver                        0x0000000105923688 chromedriver + 5781128
+17  chromedriver                        0x0000000105923850 chromedriver + 5781584
+18  chromedriver                        0x0000000105935a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 11:54:14,950 INFO: Scroll to Next success
+DEBUG: 2025-06-09 11:54:16,232 INFO: divs on scroll: 22
+DEBUG: 2025-06-09 11:54:16,236 INFO: New product added: Open Ear Bluetooth Earbuds Wireless Headphones, 50Hrs Playtime Stereo Sound Earphones with IPX7 Waterproof Ear Buds, Ideal for Fitness, Travel - Black
+DEBUG: 2025-06-09 11:54:16,237 INFO: New product added: Soundcore by Anker P20i True Wireless Earbuds, 10mm Drivers with Big Bass, Bluetooth 5.3, 30H Long Playtime, Water-Resistant, 2 Mics for AI Clear Calls, 22 Preset EQs, Customization via App
+DEBUG: 2025-06-09 11:54:16,237 INFO: New product added: BERIBES Bluetooth Headphones Over Ear, 65H Playtime and 6 EQ Music Modes Wireless Headphones with Mic, HiFi Stereo Foldable Lightweight Headset, Deep Bass for Home Office Cellphone PC Etc.(White)
+DEBUG: 2025-06-09 11:54:16,237 INFO: New product added: Picun B8 Bluetooth Headphones, 120H Playtime Headphone Wireless Bluetooth with 3 EQ Modes, Low Latency, Hands-Free Calls, Over Ear Headphones for Travel Home Office Cellphone PC Black
+DEBUG: 2025-06-09 11:54:16,238 INFO: New product added: Bose QuietComfort Bluetooth Headphones, Wireless Headphones with Active Over Ear Noise Cancelling and Mic, Deep Bass, Up to 24 Hours of Playtime, Black
+DEBUG: 2025-06-09 11:54:16,239 INFO: New product added: JBL Tune 520BT - Wireless On-Ear Headphones, Up to 57H Battery Life and Speed Charge, Lightweight, Comfortable and Foldable Design, Hands-Free Calls with Voice Aware (Blue)
+DEBUG: 2025-06-09 11:54:16,239 INFO: New product added: Uliptz Wireless Bluetooth Headphones, 65H Playtime, 6 EQ Sound Modes, HiFi Stereo Over Ear Headphones with Microphone, Foldable Lightweight Bluetooth 5.3 Headphone for Travel/Office/Cellphone/PC
+DEBUG: 2025-06-09 11:54:16,240 INFO: New product added: Skullcandy Crusher Evo Wireless Bluetooth Headphones with Multi-Sensory Bass and Charging Cable, Noise Isolating Over-Ear Fit, Up to 40 Hours Battery, Microphone for iPhone Android - True Black
+DEBUG: 2025-06-09 11:54:16,240 INFO: New product added: Wireless Earbuds, Bluetooth 5.3 Headphones Sport, In Ear buds Wireless Earbuds Bluetooth 50H Playtime LED Display, Deep Bass Stereo Noise Cancelling Headphones, IP7 Waterproof Earphones, Jet Black
+DEBUG: 2025-06-09 11:54:16,240 INFO: New product added: ZIUTY Wireless Earbuds, 2025 Bluetooth Headphones, 50hrs Stereo Deep Bass Ear Buds with Power Display Charging Case, buit in Mic, IPX5 Waterproof Headset for iPhone Andriod Phones
+DEBUG: 2025-06-09 11:54:16,241 INFO: New product added: Beats Studio Buds - True Wireless Noise Cancelling Earbuds - Compatible with Apple & Android, Built-in Microphone, IPX4 Rating, Sweat Resistant Earphones, Class 1 Bluetooth Headphones - Black
+DEBUG: 2025-06-09 11:54:16,241 INFO: New product added: JLab JBuds Lux ANC Wireless Headphones, Mauve, Hybrid Active Noise Cancelling, Customizable Sound, Spatial Audio Compatible, Premium Over-Ear Bluetooth Headset
+DEBUG: 2025-06-09 11:54:16,241 INFO: New product added: soundcore Life Q30 by Anker, Hybrid Active Noise Cancelling Headphones with Multiple Modes, Hi-Res Sound, Custom EQ via App, 50H Playtime, Comfortable Fit, Bluetooth, Multipoint Connection
+DEBUG: 2025-06-09 11:54:16,242 INFO: New product added: PocBuds Bluetooth Headphones Wireless Earbuds 80hrs Playtime Wireless Charging Case Digital Display Sports Ear Buds with Earhook Deep Bass IPX7 Waterproof Over-Ear Earphones for TV Phone Laptop Black
+DEBUG: 2025-06-09 11:54:16,242 INFO: New product added: JBL Endurance Peak 3 - Dust and Water Proof (IP68) True Wireless Active Earbuds, Pure Bass Sound, Up to 50 Total Hours of Playback with Speed Charge, Ambient Aware & Talk Thru (Black)
+DEBUG: 2025-06-09 11:54:16,242 INFO: New product added: Open Ear Headphones, Bluetooth Headphones 5.3 Sports with Smart Digital Display, 36H Playtime, IP54 Waterproof, Wireless Earbuds Lightweight Design Fit Cycling, Running, Workout (Black)
+DEBUG: 2025-06-09 11:54:16,243 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:16,243 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:16,243 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:16,243 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:16,243 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:16,243 INFO: Duplicate skipped: N/A
+DEBUG: 2025-06-09 11:54:16,246 INFO: Total products in file: 186
+DEBUG: 2025-06-09 11:54:16,246 INFO: New products added: 16
+DEBUG: 2025-06-09 11:54:16,247 INFO: [{'product_name': 'Open Ear Bluetooth Earbuds Wireless Headphones, 50Hrs Playtime Stereo Sound Earphones with IPX7 Waterproof Ear Buds, Ideal for Fitness, Travel - Black', 'product_price': '$24.98', 'image_url': 'https://m.media-amazon.com/images/I/71q4VNgbmLL._AC_UY218_.jpg', 'product_url': '/TRAUSI-Bluetooth-Headphones-Earphones-Waterproof/dp/B0DYF6BYR8', 'source': 'Amazon'}, {'product_name': 'Soundcore by Anker P20i True Wireless Earbuds, 10mm Drivers with Big Bass, Bluetooth 5.3, 30H Long Playtime, Water-Resistant, 2 Mics for AI Clear Calls, 22 Preset EQs, Customization via App', 'product_price': '$19.99', 'image_url': 'https://m.media-amazon.com/images/I/5181ILcyQJL._AC_UY218_.jpg', 'product_url': '/Soundcore-Wireless-Bluetooth-Water-Resistant-Customization/dp/B0BTYCRJSS', 'source': 'Amazon'}, {'product_name': 'BERIBES Bluetooth Headphones Over Ear, 65H Playtime and 6 EQ Music Modes Wireless Headphones with Mic, HiFi Stereo Foldable Lightweight Headset, Deep Bass for Home Office Cellphone PC Etc.(White)', 'product_price': '$21.99', 'image_url': 'https://m.media-amazon.com/images/I/61bnUaDGWPL._AC_UY218_.jpg', 'product_url': '/Bluetooth-Headphones-BERIBES-Microphone-Lightweight/dp/B0B8YNRS6D', 'source': 'Amazon'}, {'product_name': 'Picun B8 Bluetooth Headphones, 120H Playtime Headphone Wireless Bluetooth with 3 EQ Modes, Low Latency, Hands-Free Calls, Over Ear Headphones for Travel Home Office Cellphone PC Black', 'product_price': '$19.99', 'image_url': 'https://m.media-amazon.com/images/I/714leNyXHIL._AC_UY218_.jpg', 'product_url': '/Picun-B8-Bluetooth-Headphones-Hands-Free/dp/B0CFV9XR2Q', 'source': 'Amazon'}, {'product_name': 'Bose QuietComfort Bluetooth Headphones, Wireless Headphones with Active Over Ear Noise Cancelling and Mic, Deep Bass, Up to 24 Hours of Playtime, Black', 'product_price': 'N/A', 'image_url': 'https://m.media-amazon.com/images/I/51f7KKP25PL._AC_UY218_.jpg', 'product_url': '/Bose-QuietComfort-Cancelling-Headphones-Bluetooth/dp/B0CCZ26B5V', 'source': 'Amazon'}, {'product_name': 'JBL Tune 520BT - Wireless On-Ear Headphones, Up to 57H Battery Life and Speed Charge, Lightweight, Comfortable and Foldable Design, Hands-Free Calls with Voice Aware (Blue)', 'product_price': 'N/A', 'image_url': 'https://m.media-amazon.com/images/I/61UBYKeK1nL._AC_UY218_.jpg', 'product_url': '/JBL-Tune-520BT-Ear-Lightweight/dp/B0CGMV5TMR', 'source': 'Amazon'}, {'product_name': 'Uliptz Wireless Bluetooth Headphones, 65H Playtime, 6 EQ Sound Modes, HiFi Stereo Over Ear Headphones with Microphone, Foldable Lightweight Bluetooth 5.3 Headphone for Travel/Office/Cellphone/PC', 'product_price': '$15.99', 'image_url': 'https://m.media-amazon.com/images/I/61-ZTbzw6oL._AC_UY218_.jpg', 'product_url': '/Uliptz-Bluetooth-Headphones-Microphone-Lightweight/dp/B09NNBBY8F', 'source': 'Amazon'}, {'product_name': 'Skullcandy Crusher Evo Wireless Bluetooth Headphones with Multi-Sensory Bass and Charging Cable, Noise Isolating Over-Ear Fit, Up to 40 Hours Battery, Microphone for iPhone Android - True Black', 'product_price': '$124.99', 'image_url': 'https://m.media-amazon.com/images/I/71TUN83nVfL._AC_UY218_.jpg', 'product_url': '/Skullcandy-Over-Ear-Headphones-Microphone-Bluetooth/dp/B0CBLM9MMC', 'source': 'Amazon'}, {'product_name': 'Wireless Earbuds, Bluetooth 5.3 Headphones Sport, In Ear buds Wireless Earbuds Bluetooth 50H Playtime LED Display, Deep Bass Stereo Noise Cancelling Headphones, IP7 Waterproof Earphones, Jet Black', 'product_price': '$22.99', 'image_url': 'https://m.media-amazon.com/images/I/81m2PaQHHBL._AC_UY218_.jpg', 'product_url': '/Bluetooth-Headphones-Cancelling-Waterproof-Earphones/dp/B0F9L3H6PS', 'source': 'Amazon'}, {'product_name': 'ZIUTY Wireless Earbuds, 2025 Bluetooth Headphones, 50hrs Stereo Deep Bass Ear Buds with Power Display Charging Case, buit in Mic, IPX5 Waterproof Headset for iPhone Andriod Phones', 'product_price': '$19.99', 'image_url': 'https://m.media-amazon.com/images/I/713bfTZ2mrL._AC_UY218_.jpg', 'product_url': '/ZIUTY-Wireless-Bluetooth-Headphones-Waterproof/dp/B0F42Q8FRJ', 'source': 'Amazon'}, {'product_name': 'Beats Studio Buds - True Wireless Noise Cancelling Earbuds - Compatible with Apple & Android, Built-in Microphone, IPX4 Rating, Sweat Resistant Earphones, Class 1 Bluetooth Headphones - Black', 'product_price': 'N/A', 'image_url': 'https://m.media-amazon.com/images/I/51bRSWrEc7S._AC_UY218_.jpg', 'product_url': '/Beats-Studio-Cancelling-Earbuds-Built-Bluetooth-Headphones/dp/B096SV8SJG', 'source': 'Amazon'}, {'product_name': 'JLab JBuds Lux ANC Wireless Headphones, Mauve, Hybrid Active Noise Cancelling, Customizable Sound, Spatial Audio Compatible, Premium Over-Ear Bluetooth Headset', 'product_price': '$79.99', 'image_url': 'https://m.media-amazon.com/images/I/41410pqIDwL._AC_UY218_.jpg', 'product_url': '/JLab-Headphones-Cancelling-Customizable-Compatible/dp/B0CRLXZ5J6', 'source': 'Amazon'}, {'product_name': 'soundcore Life Q30 by Anker, Hybrid Active Noise Cancelling Headphones with Multiple Modes, Hi-Res Sound, Custom EQ via App, 50H Playtime, Comfortable Fit, Bluetooth, Multipoint Connection', 'product_price': '$63.99', 'image_url': 'https://m.media-amazon.com/images/I/61K3Y0MZMpL._AC_UY218_.jpg', 'product_url': '/Soundcore-Cancelling-Headphones-Comfortable-Bluetooth/dp/B08HMWZBXC', 'source': 'Amazon'}, {'product_name': 'PocBuds Bluetooth Headphones Wireless Earbuds 80hrs Playtime Wireless Charging Case Digital Display Sports Ear Buds with Earhook Deep Bass IPX7 Waterproof Over-Ear Earphones for TV Phone Laptop Black', 'product_price': '$25.99', 'image_url': 'https://m.media-amazon.com/images/I/71G9a1iSpHL._AC_UY218_.jpg', 'product_url': '/Bluetooth-Headphones-Wireless-Waterproof-Earphones/dp/B0C3W4MNN1', 'source': 'Amazon'}, {'product_name': 'JBL Endurance Peak 3 - Dust and Water Proof (IP68) True Wireless Active Earbuds, Pure Bass Sound, Up to 50 Total Hours of Playback with Speed Charge, Ambient Aware & Talk Thru (Black)', 'product_price': '$99.95', 'image_url': 'https://m.media-amazon.com/images/I/619Hj1lDwML._AC_UY218_.jpg', 'product_url': '/JBL-Endurance-Peak-Wireless-Headphones/dp/B0BQPW9R9H', 'source': 'Amazon'}, {'product_name': 'Open Ear Headphones, Bluetooth Headphones 5.3 Sports with Smart Digital Display, 36H Playtime, IP54 Waterproof, Wireless Earbuds Lightweight Design Fit Cycling, Running, Workout (Black)', 'product_price': '$16.98', 'image_url': 'https://m.media-amazon.com/images/I/61ke-2BW+IL._AC_UY218_.jpg', 'product_url': '/Eigsupia-Headphones-Bluetooth-Waterproof-Lightweight/dp/B0D7RJTH4B', 'source': 'Amazon'}]
+DEBUG: 2025-06-09 11:54:16,247 INFO: Items collected Next button seen
+DEBUG: 2025-06-09 11:54:17,087 ERROR: last ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+DEBUG: 2025-06-09 11:54:21,182 ERROR: last HTTPConnectionPool(host='localhost', port=51879): Max retries exceeded with url: /session/c1e1f3b1bfbbd94177684f541d459f0b/execute/sync (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x10ec601d0>: Failed to establish a new connection: [Errno 61] Connection refused'))
+DEBUG: 2025-06-09 12:28:59,304 ERROR: Message: unknown error: net::ERR_INTERNET_DISCONNECTED
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+0   chromedriver                        0x0000000106223728 chromedriver + 5891880
+1   chromedriver                        0x000000010621ae7a chromedriver + 5856890
+2   chromedriver                        0x0000000105ceb400 chromedriver + 418816
+3   chromedriver                        0x0000000105ce22b3 chromedriver + 381619
+4   chromedriver                        0x0000000105cd3068 chromedriver + 319592
+5   chromedriver                        0x0000000105cd4d80 chromedriver + 327040
+6   chromedriver                        0x0000000105cd33eb chromedriver + 320491
+7   chromedriver                        0x0000000105cd2e00 chromedriver + 318976
+8   chromedriver                        0x0000000105cd2b0b chromedriver + 318219
+9   chromedriver                        0x0000000105cd09c4 chromedriver + 309700
+10  chromedriver                        0x0000000105cd118a chromedriver + 311690
+11  chromedriver                        0x0000000105cee979 chromedriver + 432505
+12  chromedriver                        0x0000000105d8bc65 chromedriver + 1076325
+13  chromedriver                        0x0000000105d634e2 chromedriver + 910562
+14  chromedriver                        0x0000000105d8b073 chromedriver + 1073267
+15  chromedriver                        0x0000000105d632b3 chromedriver + 910003
+16  chromedriver                        0x0000000105d2f507 chromedriver + 697607
+17  chromedriver                        0x0000000105d30171 chromedriver + 700785
+18  chromedriver                        0x00000001061e14d0 chromedriver + 5620944
+19  chromedriver                        0x00000001061e545f chromedriver + 5637215
+20  chromedriver                        0x00000001061bc8e2 chromedriver + 5470434
+21  chromedriver                        0x00000001061e5dcf chromedriver + 5639631
+22  chromedriver                        0x00000001061ab0a4 chromedriver + 5398692
+23  chromedriver                        0x0000000106208688 chromedriver + 5781128
+24  chromedriver                        0x0000000106208850 chromedriver + 5781584
+25  chromedriver                        0x000000010621aa41 chromedriver + 5855809
+26  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+27  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:29:02,216 ERROR: Message: unknown error: net::ERR_INTERNET_DISCONNECTED
+  (Session info: chrome=137.0.7151.69)
+Stacktrace:
+0   chromedriver                        0x000000010d8d0728 chromedriver + 5891880
+1   chromedriver                        0x000000010d8c7e7a chromedriver + 5856890
+2   chromedriver                        0x000000010d398400 chromedriver + 418816
+3   chromedriver                        0x000000010d38f2b3 chromedriver + 381619
+4   chromedriver                        0x000000010d380068 chromedriver + 319592
+5   chromedriver                        0x000000010d381d80 chromedriver + 327040
+6   chromedriver                        0x000000010d3803eb chromedriver + 320491
+7   chromedriver                        0x000000010d37fe00 chromedriver + 318976
+8   chromedriver                        0x000000010d37fb0b chromedriver + 318219
+9   chromedriver                        0x000000010d37d9c4 chromedriver + 309700
+10  chromedriver                        0x000000010d37e18a chromedriver + 311690
+11  chromedriver                        0x000000010d39b979 chromedriver + 432505
+12  chromedriver                        0x000000010d438c65 chromedriver + 1076325
+13  chromedriver                        0x000000010d4104e2 chromedriver + 910562
+14  chromedriver                        0x000000010d438073 chromedriver + 1073267
+15  chromedriver                        0x000000010d4102b3 chromedriver + 910003
+16  chromedriver                        0x000000010d3dc507 chromedriver + 697607
+17  chromedriver                        0x000000010d3dd171 chromedriver + 700785
+18  chromedriver                        0x000000010d88e4d0 chromedriver + 5620944
+19  chromedriver                        0x000000010d89245f chromedriver + 5637215
+20  chromedriver                        0x000000010d8698e2 chromedriver + 5470434
+21  chromedriver                        0x000000010d892dcf chromedriver + 5639631
+22  chromedriver                        0x000000010d8580a4 chromedriver + 5398692
+23  chromedriver                        0x000000010d8b5688 chromedriver + 5781128
+24  chromedriver                        0x000000010d8b5850 chromedriver + 5781584
+25  chromedriver                        0x000000010d8c7a41 chromedriver + 5855809
+26  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+27  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:30:42,311 INFO: Page load complete
+DEBUG: 2025-06-09 12:30:42,345 INFO: Searching for ['wireless headphones'] on https://www.aliexpress.com/
+DEBUG: 2025-06-09 12:30:42,346 INFO: Filling input field
+DEBUG: 2025-06-09 12:30:43,563 INFO: Pressing search button
+DEBUG: 2025-06-09 12:30:54,299 INFO: Search result success
+DEBUG: 2025-06-09 12:30:54,301 INFO: Scroll in
+DEBUG: 2025-06-09 12:31:01,462 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:01,463 INFO: Scrolled 0
+DEBUG: 2025-06-09 12:31:08,569 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:08,570 INFO: Scrolled 1
+DEBUG: 2025-06-09 12:31:15,662 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:15,662 INFO: Scrolled 2
+DEBUG: 2025-06-09 12:31:22,710 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:22,712 INFO: Scrolled 3
+DEBUG: 2025-06-09 12:31:29,789 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:29,790 INFO: Scrolled 4
+DEBUG: 2025-06-09 12:31:36,882 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:36,883 INFO: Scrolled 5
+DEBUG: 2025-06-09 12:31:43,930 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:43,930 INFO: Scrolled 6
+DEBUG: 2025-06-09 12:31:51,009 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:51,010 INFO: Scrolled 7
+DEBUG: 2025-06-09 12:31:58,099 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:31:58,100 INFO: Scrolled 8
+DEBUG: 2025-06-09 12:32:05,208 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:32:05,210 INFO: Scrolled 9
+DEBUG: 2025-06-09 12:32:12,364 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:32:12,365 INFO: Scrolled 10
+DEBUG: 2025-06-09 12:32:19,430 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:32:19,430 INFO: Scrolled 11
+DEBUG: 2025-06-09 12:32:26,512 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"css selector","selector":".comet-pagination-item-link"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x0000000107087cd4 chromedriver + 1084628
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x0000000107085073 chromedriver + 1073267
+8   chromedriver                        0x000000010705d2b3 chromedriver + 910003
+9   chromedriver                        0x0000000107029507 chromedriver + 697607
+10  chromedriver                        0x000000010702a171 chromedriver + 700785
+11  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+12  chromedriver                        0x00000001074df45f chromedriver + 5637215
+13  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+14  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+15  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+16  chromedriver                        0x0000000107502688 chromedriver + 5781128
+17  chromedriver                        0x0000000107502850 chromedriver + 5781584
+18  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+19  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:32:26,512 INFO: Scrolled 12
+DEBUG: 2025-06-09 12:32:30,107 INFO: divs on scroll: 0
+DEBUG: 2025-06-09 12:32:30,130 INFO: Total products in file: 186
+DEBUG: 2025-06-09 12:32:30,131 INFO: New products added: 0
+DEBUG: 2025-06-09 12:32:30,131 ERROR: Items on Scroll []
+DEBUG: 2025-06-09 12:32:30,188 INFO: Scrolled to Go to page
+DEBUG: 2025-06-09 12:32:34,207 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"tag name","selector":"button"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x000000010702add6 chromedriver + 703958
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x000000010702acc8 chromedriver + 703688
+8   chromedriver                        0x000000010705d69e chromedriver + 911006
+9   chromedriver                        0x0000000107085073 chromedriver + 1073267
+10  chromedriver                        0x000000010705d2b3 chromedriver + 910003
+11  chromedriver                        0x0000000107029507 chromedriver + 697607
+12  chromedriver                        0x000000010702a171 chromedriver + 700785
+13  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+14  chromedriver                        0x00000001074df45f chromedriver + 5637215
+15  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+16  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+17  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+18  chromedriver                        0x0000000107502688 chromedriver + 5781128
+19  chromedriver                        0x0000000107502850 chromedriver + 5781584
+20  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+21  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+22  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:32:34,207 INFO: Scrolled 13
+DEBUG: 2025-06-09 12:32:37,595 INFO: divs on scroll: 0
+DEBUG: 2025-06-09 12:32:37,603 INFO: Total products in file: 186
+DEBUG: 2025-06-09 12:32:37,603 INFO: New products added: 0
+DEBUG: 2025-06-09 12:32:37,604 ERROR: Items on Scroll []
+DEBUG: 2025-06-09 12:32:37,645 INFO: Scrolled to Go to page
+DEBUG: 2025-06-09 12:32:41,689 ERROR: Scroll again : Message: no such element: Unable to locate element: {"method":"tag name","selector":"button"}
+  (Session info: chrome=137.0.7151.69); For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Stacktrace:
+0   chromedriver                        0x000000010751d728 chromedriver + 5891880
+1   chromedriver                        0x0000000107514e7a chromedriver + 5856890
+2   chromedriver                        0x0000000106fe5400 chromedriver + 418816
+3   chromedriver                        0x000000010703722b chromedriver + 754219
+4   chromedriver                        0x0000000107037441 chromedriver + 754753
+5   chromedriver                        0x000000010702add6 chromedriver + 703958
+6   chromedriver                        0x000000010705d50d chromedriver + 910605
+7   chromedriver                        0x000000010702acc8 chromedriver + 703688
+8   chromedriver                        0x000000010705d69e chromedriver + 911006
+9   chromedriver                        0x0000000107085073 chromedriver + 1073267
+10  chromedriver                        0x000000010705d2b3 chromedriver + 910003
+11  chromedriver                        0x0000000107029507 chromedriver + 697607
+12  chromedriver                        0x000000010702a171 chromedriver + 700785
+13  chromedriver                        0x00000001074db4d0 chromedriver + 5620944
+14  chromedriver                        0x00000001074df45f chromedriver + 5637215
+15  chromedriver                        0x00000001074b68e2 chromedriver + 5470434
+16  chromedriver                        0x00000001074dfdcf chromedriver + 5639631
+17  chromedriver                        0x00000001074a50a4 chromedriver + 5398692
+18  chromedriver                        0x0000000107502688 chromedriver + 5781128
+19  chromedriver                        0x0000000107502850 chromedriver + 5781584
+20  chromedriver                        0x0000000107514a41 chromedriver + 5855809
+21  libsystem_pthread.dylib             0x00007ff806c004e1 _pthread_start + 125
+22  libsystem_pthread.dylib             0x00007ff806bfbf6b thread_start + 15
+
+DEBUG: 2025-06-09 12:32:41,689 INFO: Scrolled 14
+DEBUG: 2025-06-09 12:32:41,689 INFO: None
+DEBUG: 2025-06-09 12:32:52,120 ERROR: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
