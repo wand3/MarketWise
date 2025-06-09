@@ -1,3 +1,4 @@
+import asyncio
 import random
 import time
 from bs4 import BeautifulSoup
@@ -6,10 +7,11 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.keys import Keys
-from logger import logger
+from logger import setup_logger
 import json
 import os
 
+logger = setup_logger("amazon", "DEBUG", "scraper.log")
 
 
 def save_results(results):
@@ -30,6 +32,7 @@ def save_results(results):
 
 
 def get_stock(soup):
+
     # Find all divs with the specified class
     all_divs = soup.find_all("div", attrs={"role": "listitem"})
     logger.info(f"divs on scroll: {len(all_divs)}")
@@ -73,64 +76,67 @@ def get_product(driver):
         # products.append(product)
         logger.info(product)
         save_results({product})
-    # return products
+    return product
 
 
 # scroll to pagination part of page
 def scroll_page(driver):
     logger.info("Scroll in")
 
-    # Wait for the search button to appear and click it
-    dismiss_button = WebDriverWait(driver, 10).until(
-        EC.element_to_be_clickable((By.XPATH, '//input[@data-action-type="DISMISS"]'))
-    )
-    logger.info("dismiss success")
-
-    if dismiss_button:
-        dismiss_button.click()
-        logger.info("click dismiss success")
-
-    # Wait for next button to be clickable
-    pages = 0
-    while pages < 2:
+    while True:
         try:
-            # Scroll to pagination
-            page_no = driver.find_element(By.CSS_SELECTOR, "a.s-pagination-next")
-            ActionChains(driver) \
-                .scroll_to_element(page_no) \
-                .perform()
-            logger.info("Scroll to Next success")
-
-            # isDisabled = False
-            next_button = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located(
-                    (By.CSS_SELECTOR, "a.s-pagination-next")
-                )
+            # Wait for the search button to appear and click it
+            dismiss_button = WebDriverWait(driver, 10).until(
+                EC.element_to_be_clickable((By.XPATH, '//input[@data-action-type="DISMISS"]'))
             )
-            # items = get_product(driver)
-            # logger.info(items)
+            logger.info("dismiss success")
 
-            if next_button:
-                logger.info("Next button seen")
-                ActionChains(driver) \
-                    .move_to_element(next_button) \
-                    .click().perform()
-
-            
-            # isDisabled = False
-            next_end = WebDriverWait(driver, 10).until(
-                EC.presence_of_element_located(
-                    (By.CSS_SELECTOR, "span.s-pagination-next")
-                )
-            )
-            next_class = next_end.get_attribute('class')
-            logger.info(next_class)
-
-            if 'disabled' in next_class:
-                # isDisabled = True
-                break
-           
-            logger.info("Next page button clicked")
-            pages += 1
+            if dismiss_button:
+                dismiss_button.click()
+                logger.info("click dismiss success")
         except Exception as e:
-            logger.error(e)
+            logger.error(f"failed button {e}")
+            # Wait for next button to be clickable
+        finally:
+            while True:
+                try:
+                    driver.execute_script(f"window.scrollBy(0, document.body.scrollHeight);")  # Scrolls down 500px
+
+                    # Scroll to pagination
+                    page_no = driver.find_element(By.CSS_SELECTOR, "a.s-pagination-next")
+                    ActionChains(driver) \
+                        .scroll_to_element(page_no) \
+                        .perform()
+                    logger.info("Scroll to Next success")
+
+                    # isDisabled = False
+                    next_button = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located(
+                            (By.CSS_SELECTOR, "a.s-pagination-next")
+                        )
+                    )
+                    items = get_product(driver)
+                    logger.info(f'{items}')
+
+                    if next_button:
+                        logger.info("Next button seen")
+                        ActionChains(driver) \
+                            .move_to_element(next_button) \
+                            .click().perform()
+
+                    # isDisabled = False
+                    next_end = WebDriverWait(driver, 10).until(
+                        EC.presence_of_element_located(
+                            (By.CSS_SELECTOR, "span.s-pagination-next")
+                        )
+                    )
+                    next_class = next_end.get_attribute('class')
+                    logger.info(next_class)
+
+                    if 'disabled' in next_class:
+                        # isDisabled = True
+                        break
+
+                    logger.info("Next page button clicked")
+                except Exception as e:
+                    logger.error(f'last {e}')

@@ -1,7 +1,7 @@
 import json
 import os
 import random
-from logger import logger
+from logger import setup_logger
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -10,8 +10,11 @@ from selenium.webdriver.support import expected_conditions as EC
 from amazon import scroll_page
 from aliexpress import get_stock, scroll_page_aliexpress
 
-AMAZON = "https://amazon.com"
+
+logger = setup_logger("main", "DEBUG", "scraper.log")
+
 ALIEXPRESS = "https://aliexpress.com"
+AMAZON = "https://amazon.com"
 
 URLS = {
     AMAZON: {
@@ -60,6 +63,7 @@ def search(metadata, driver, search_text):
         )
         logger.info("Search result success")
 
+
     else:
         raise Exception("Could not search: missing selectors.")
 
@@ -91,15 +95,15 @@ def main(url, search_text):
         logger.info("Page load complete")
         # search the loaded page
         search_page = search(metadata, driver, search_text)
-
         # scroll page results page
-        if AMAZON:
+        if url == 'AMAZON':
             amzn = scroll_page(driver)
+            logger.info(amzn)
+
             # save_results(amzn)
         else:
             ali = scroll_page_aliexpress(driver)
             # save_results(ali)
-
     finally:
         driver.implicitly_wait(30000)  # seconds
         driver.quit()
@@ -108,4 +112,4 @@ def main(url, search_text):
 if __name__ == "__main__":
     # test script
     main(AMAZON, "ryzen 9 3950x")
-    # main(ALIEXPRESS, "ryzen 9 3950x")
+    # main(ALIEXPRESS, "gator zoo")
