@@ -62,13 +62,40 @@ MarketWise follows a modular client-server architecture:
 ```bash
 git clone https://github.com/wand3/MarketWise.git
 cd marketwise
-
+```
 
 ## Testing
-MarketWise employs a comprehensive testing strategy:
+MarketWise employs a comprehensive testing strategy
+
 ### Test Types
 **Unit Tests:** Core business logic and utilities
 
 **Integration Tests:** Database interactions and API endpoints
 
 **E2E Tests:** Browser-based testing with Selenium
+
+
+## Contributing
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+
+2. Create your feature branch:
+  ```
+  bash
+  
+  git checkout -b feature/your-feature
+  ```
+3. Commit your changes:
+  ```
+  bash
+  
+  git commit -m 'Add some feature'
+  ```
+4. Push to the branch:
+  ```
+  bash
+  
+  git push origin feature/your-feature
+  ```
+5. Open a pull request
