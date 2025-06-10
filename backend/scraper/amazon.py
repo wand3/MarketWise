@@ -249,16 +249,6 @@ def scroll_page(driver):
                         return items
 
                     logger.info("Next page button clicked")
-                    # # Check if page 6 is visible (you can change this to any number)
-                    # target_page = "6"
-                    # try:
-                    #     page = driver.find_element(By.CSS_SELECTOR, "span.s-pagination-selected").text
-                    #     if page == target_page:
-                    #         logger.info("Page 6 is found. Breaking loop.")
-                    #         items = get_product(driver)
-                    #         return items
-                    # except:
-                    #     pass
                 except Exception as e:
                     logger.error(f'last {e}')
 

@@ -65,7 +65,7 @@ def search(metadata, driver, search_text):
 
 def get_stock(soup):
     # Find all divs with the specified class
-    all_divs = soup.find_all("div", attrs={"class": "jt_j6"})
+    all_divs = soup.find_all("div", attrs={"class": "hs_bu search-item-card-wrapper-gallery"})
     # logger.info(f"divs on scroll: {len(all_divs)}")
     return all_divs
 
@@ -103,43 +103,47 @@ def get_product(driver):
                 seen_products = {hash_product(p) for p in existing_products}
         except json.JSONDecodeError:
             logger.warning("JSON file is empty/corrupted. Starting fresh.")
+    try:
 
-    # Process current page items
-    for item in listitems:
-        product_image = item.find("img", class_="mj_en")
-        product_name = item.find("h3", class_="jt_kr")
-        product_link = item.find("a", class_="search-card-item")
-        product_price = item.find("div", class_="jt_kt")
+        # Process current page items
+        for item in listitems:
+            product_image = item.find_all("img", class_="mn_bc")
+            product_name = item.find("h3", class_="kr_j0")
+            product_link = item.find("a", class_="search-card-item")
+            product_price = item.find("div", class_="kr_kj")
 
-        product = {
-            "product_name": product_name.text if product_name else "N/A",
-            "product_price": product_price.text if product_price else "N/A",
-            "image_url": product_image.get('src') if product_image else "N/A",
-            "product_url": "/".join(product_link.get('href').split("/")[:4]) if product_link else "N/A",
-            "source": "Aliexpress"
-        }
+            product = {
+                "product_name": product_name.text if product_name else "N/A",
+                "product_price": product_price.text if product_price else "N/A",
+                "image_url": product_image[0].get('src') if product_image else "N/A",
+                "product_url": "/".join(product_link.get('href').split('/')[:5]) if product_link else "N/A",
+                "source": "Aliexpress"
+            }
 
-        # Create unique hash for the product
-        product_hash = hash_product(product)
+            logger.info(f'New product added: {product}')
 
-        # Check for duplicates
-        if product_hash not in seen_products:
-            seen_products.add(product_hash)
-            current_page_products.append(product)
-            logger.info(f'New product added: {product["product_name"]}')
-        else:
-            logger.info(f'Duplicate skipped: {product["product_name"]}')
+            # Create unique hash for the product
+            product_hash = hash_product(product)
 
-    # Merge with existing products
-    all_products = existing_products + current_page_products
+            # Check for duplicates
+            if product_hash not in seen_products:
+                seen_products.add(product_hash)
+                current_page_products.append(product)
+                logger.info(f'New product added: {product["product_name"]}')
+            else:
+                logger.info(f'Duplicate skipped: {product["product_name"]}')
 
-    # Save to JSON
-    with open(file_path, 'w') as f:
-        json.dump(all_products, f, indent=2)
+        # Merge with existing products
+        all_products = existing_products + current_page_products
 
-    logger.info(f'Total products in file: {len(all_products)}')
-    logger.info(f'New products added: {len(current_page_products)}')
-    return current_page_products
+        # Save to JSON
+        with open(file_path, 'w') as f:
+            json.dump(all_products, f, indent=2)
+
+        logger.info(f'Total products in file: {len(all_products)}')
+        return current_page_products
+    except Exception as e:
+        return e
 
 
 # scroll to pagination part of page
@@ -170,56 +174,40 @@ def scroll_page_aliexpress(driver):
                     driver.execute_script(f"window.scrollBy(0, {100 * height});")  # Scrolls down 500px
                     height += (height + (i * 100))
                     # Scroll to pagination
-                    go_to_page = driver.find_element(By.CLASS_NAME, ".comet-pagination")
+                    # go_to_page = driver.find_element(By.CLASS_NAME, ".comet-pagination")
+                    go_to_page = driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div/div[2]/div[3]")
                     logger.info("Go to page found")
 
                     if go_to_page:
                         try:
-                            items = get_product(driver)
-                            logger.error(f"Items on Scroll {items}")
                             ActionChains(driver) \
                                 .scroll_to_element(go_to_page) \
                                 .perform()
                             logger.info("Scrolled to Go to page")
-                            go_to_page.find_element(By.TAG_NAME, "button").click()
+                            next_page = driver.find_element(By.CSS_SELECTOR, ".comet-pagination-next")
+                            items = get_product(driver)
+                            logger.info(f"Items on Scroll {len(items)}")
+                            # logger.info(next_page.get_attribute("aria-disabled"))
+                            if next_page.get_attribute("aria-disabled") == 'false':
+                                logger.info(f"Active next page button seen")
+                                ActionChains(driver) \
+                                    .scroll_to_element(next_page) \
+                                    .click()
+                                next_page.click()
 
-
-                            # # Wait for the input to appear and click it
-                            # page_input_visible = WebDriverWait(driver, 10).until(
-                            #     EC.element_to_be_clickable(
-                            #         (By.CSS_SELECTOR, '.comet-pagination-options-quick-jumper input[type="text"]'))
-                            # )
-                            # logger.info("dismiss success")
-                            #
-                            # # fill page number
-                            # if page_input_visible:
-                            #     page_input = driver.find_element(By.CSS_SELECTOR,
-                            #                                      '.comet-pagination-options-quick-jumper input[type="text"]')
-                            #     ActionChains(driver) \
-                            #         .scroll_to_element(page_input) \
-                            #         .click() \
-                            #         .send_keys('2') \
-                            #         .perform()
-                            #     logger.info("Type page number success")
-                            # else:
-                            #     logger.info("Type page number failed")
-
-                            # Wait up to 15 seconds for the button to appear and become clickable
-                            wait = WebDriverWait(driver, 15)
-                            next_button = wait.until(
-                                EC.element_to_be_clickable((By.CSS_SELECTOR, "button.comet-pagination-item-link"))
-                            )
-                            if next_button:
-                                # Click it
-                                next_button.click()
-                                logger.info("Next page button clicked")
-                            else:
-                                return items
+                                logger.info(f"Active next page button clicked")
+                                page_visited += 1
+                                time.sleep(delay)
+                                # next_page.click()
+                                if page_visited == 6:
+                                    # to stop page visits on page 6
+                                    # items = get_product(driver)
+                                    return items
 
                         except Exception as e:
                             logger.error(f"Scroll again : {e}")
                 except Exception as e:
-                    logger.error(f"Scroll again : {e}")
+                    logger.error(f"Exception : {e}")
 
 
 async def main_aliexpress(url, search_text):
