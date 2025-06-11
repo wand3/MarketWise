@@ -3,9 +3,9 @@ from datetime import datetime
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import os
-from config import Config
+from .config import Config
 from flask_sqlalchemy import SQLAlchemy
-from product import Base, ProductListing, PriceHistory
+from .product import Base, ProductListing, PriceHistory
 
 # create and configure the app
 app = Flask(__name__, instance_relative_config=True)
@@ -62,6 +62,8 @@ def get_results():
         })
 
     return jsonify(product_results)
+
+
 @app.shell_context_processor
 def make_shell_context():
     """

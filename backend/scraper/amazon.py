@@ -10,7 +10,7 @@ from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from logger import setup_logger
+from .logger import setup_logger
 import json
 import os
 
@@ -226,7 +226,10 @@ def scroll_page(driver):
                         logger.info("Scroll to Next success")
                         # get all products in page
                         items = get_product(driver)
-                        logger.info(f'{items}')
+                        # logger.info(f'{items}')
+
+                        if page_visited == 6:
+                            return items
 
                         logger.info("Items collected Next button seen")
                         ActionChains(driver) \
@@ -242,9 +245,6 @@ def scroll_page(driver):
                     next_class = page_next.get_attribute('class')
                     logger.info(next_class)
                     if 'disabled' in next_class:
-                        items = get_product(driver)
-                        return items
-                    elif page_visited == 6:
                         items = get_product(driver)
                         return items
 
