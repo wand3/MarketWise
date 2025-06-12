@@ -112,6 +112,7 @@ def get_product(driver):
         product_link = item.find("a", class_="a-link-normal")
         product_price = item.find("span", class_="a-offscreen")
 
+
         product = {
             "product_name": product_name.text if product_name else "N/A",
             "product_price": product_price.text if product_price else "N/A",
@@ -281,10 +282,11 @@ async def main_amazon(url, search_text):
         # scroll page results page
         amzn = scroll_page(driver)
         logger.info(amzn)
+        if amzn:
+            return True
     except Exception as e:
         logger.error(e)
     finally:
-        driver.implicitly_wait(30000)  # seconds
         driver.quit()
 
 

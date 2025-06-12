@@ -238,10 +238,11 @@ async def main_aliexpress(url, search_text):
         # scroll page results page
         alexp = scroll_page_aliexpress(driver)
         logger.info(alexp)
+        if alexp:
+            return True
     except Exception as e:
         logger.error(e)
     finally:
-        driver.implicitly_wait(30000)  # seconds
         driver.quit()
 
 
