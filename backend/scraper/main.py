@@ -13,10 +13,12 @@ logger = setup_logger("main", "DEBUG", "scraper.log")
 
 
 async def run_scrapers_async(search):
-    # aliexpress_data = await scrape_aliexpress_async(search)
-    amazon_data = await scrape_amazon_async(search)
-
-    if amazon_data:
+    aliexpress_data = await scrape_aliexpress_async(search)
+    # amazon_data = await scrape_amazon_async(search)
+    #
+    # if amazon_data:
+    #     return
+    if aliexpress_data:
         return
     return False
 
@@ -63,8 +65,10 @@ if __name__ == "__main__":
     output_dir = base_folder / 'scraper'
     file_path = output_dir / "result.json"
 
-    load_products_from_json(file_path, args.search)
+    # load_products_from_json(file_path, args.search)
+    try:
 
-    # Run the async scraper
-    # asyncio.run(run_scrapers_async(args.search))
-
+        # Run the async scraper
+        asyncio.run(run_scrapers_async(args.search))
+    except Exception as e:
+        print(e)

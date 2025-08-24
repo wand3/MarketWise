@@ -36,14 +36,17 @@ def submit_results():
 
 @main_bp.route('/all-results', methods=['GET'])
 def get_results():
-    results = db.ProductListing.query.all()
+    results = ProductListing.query.all()
     product_results = []
+    # print(dir(results))
+
     for result in results:
+        print(result)
         product_results.append({
-            'name': result.name,
+            'product_name': result.product_name,
             'url': result.url,
-            'price': result.price,
-            "img": result.img,
+            'product_price': result.current_price,
+            "img": result.image,
             'date': result.created_at,
             "created_at": result.created_at,
             "search_text": result.search_text,

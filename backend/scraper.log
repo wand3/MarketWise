@@ -1,0 +1,172 @@
+DEBUG: 2025-08-24 06:31:10,206 INFO: Page load complete
+DEBUG: 2025-08-24 06:31:10,272 INFO: Searching for ['fireball'] on https://www.aliexpress.com/
+DEBUG: 2025-08-24 06:31:10,273 INFO: Filling input field
+DEBUG: 2025-08-24 06:31:11,075 INFO: Pressing search button
+DEBUG: 2025-08-24 06:31:23,650 ERROR: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000108155f58 chromedriver + 5934936
+1   chromedriver                        0x000000010814d4ea chromedriver + 5899498
+2   chromedriver                        0x0000000107c15e00 chromedriver + 429568
+3   chromedriver                        0x0000000107c67ff4 chromedriver + 765940
+4   chromedriver                        0x0000000107c68211 chromedriver + 766481
+5   chromedriver                        0x0000000107cb7e94 chromedriver + 1093268
+6   chromedriver                        0x0000000107c8e08d chromedriver + 921741
+7   chromedriver                        0x0000000107cb51e8 chromedriver + 1081832
+8   chromedriver                        0x0000000107c8de33 chromedriver + 921139
+9   chromedriver                        0x0000000107c5a39b chromedriver + 709531
+10  chromedriver                        0x0000000107c5b081 chromedriver + 712833
+11  chromedriver                        0x0000000108113650 chromedriver + 5662288
+12  chromedriver                        0x0000000108117514 chromedriver + 5678356
+13  chromedriver                        0x00000001080ee302 chromedriver + 5509890
+14  chromedriver                        0x0000000108117fbf chromedriver + 5681087
+15  chromedriver                        0x00000001080dd2a4 chromedriver + 5440164
+16  chromedriver                        0x000000010813a7d8 chromedriver + 5822424
+17  chromedriver                        0x000000010813a9a0 chromedriver + 5822880
+18  chromedriver                        0x000000010814d0c1 chromedriver + 5898433
+19  libsystem_pthread.dylib             0x00007ff8169b34e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff8169aef6b thread_start + 15
+
+DEBUG: 2025-08-24 06:33:11,441 INFO: Page load complete
+DEBUG: 2025-08-24 06:33:11,565 INFO: Searching for ['fireball'] on https://www.aliexpress.com/
+DEBUG: 2025-08-24 06:33:11,565 INFO: Filling input field
+DEBUG: 2025-08-24 06:33:12,809 INFO: Pressing search button
+DEBUG: 2025-08-24 06:33:25,347 ERROR: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000101133f58 chromedriver + 5934936
+1   chromedriver                        0x000000010112b4ea chromedriver + 5899498
+2   chromedriver                        0x0000000100bf3e00 chromedriver + 429568
+3   chromedriver                        0x0000000100c45ff4 chromedriver + 765940
+4   chromedriver                        0x0000000100c46211 chromedriver + 766481
+5   chromedriver                        0x0000000100c95e94 chromedriver + 1093268
+6   chromedriver                        0x0000000100c6c08d chromedriver + 921741
+7   chromedriver                        0x0000000100c931e8 chromedriver + 1081832
+8   chromedriver                        0x0000000100c6be33 chromedriver + 921139
+9   chromedriver                        0x0000000100c3839b chromedriver + 709531
+10  chromedriver                        0x0000000100c39081 chromedriver + 712833
+11  chromedriver                        0x00000001010f1650 chromedriver + 5662288
+12  chromedriver                        0x00000001010f5514 chromedriver + 5678356
+13  chromedriver                        0x00000001010cc302 chromedriver + 5509890
+14  chromedriver                        0x00000001010f5fbf chromedriver + 5681087
+15  chromedriver                        0x00000001010bb2a4 chromedriver + 5440164
+16  chromedriver                        0x00000001011187d8 chromedriver + 5822424
+17  chromedriver                        0x00000001011189a0 chromedriver + 5822880
+18  chromedriver                        0x000000010112b0c1 chromedriver + 5898433
+19  libsystem_pthread.dylib             0x00007ff8169b34e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff8169aef6b thread_start + 15
+
+DEBUG: 2025-08-24 06:34:42,243 INFO: Page load complete
+DEBUG: 2025-08-24 06:34:42,264 INFO: Searching for ['fireball'] on https://www.aliexpress.com/
+DEBUG: 2025-08-24 06:34:42,264 INFO: Filling input field
+DEBUG: 2025-08-24 06:34:42,992 INFO: Pressing search button
+DEBUG: 2025-08-24 06:34:53,141 ERROR: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000106e51f58 chromedriver + 5934936
+1   chromedriver                        0x0000000106e494ea chromedriver + 5899498
+2   chromedriver                        0x0000000106911e00 chromedriver + 429568
+3   chromedriver                        0x0000000106963ff4 chromedriver + 765940
+4   chromedriver                        0x0000000106964211 chromedriver + 766481
+5   chromedriver                        0x00000001069b3e94 chromedriver + 1093268
+6   chromedriver                        0x000000010698a08d chromedriver + 921741
+7   chromedriver                        0x00000001069b11e8 chromedriver + 1081832
+8   chromedriver                        0x0000000106989e33 chromedriver + 921139
+9   chromedriver                        0x000000010695639b chromedriver + 709531
+10  chromedriver                        0x0000000106957081 chromedriver + 712833
+11  chromedriver                        0x0000000106e0f650 chromedriver + 5662288
+12  chromedriver                        0x0000000106e13514 chromedriver + 5678356
+13  chromedriver                        0x0000000106dea302 chromedriver + 5509890
+14  chromedriver                        0x0000000106e13fbf chromedriver + 5681087
+15  chromedriver                        0x0000000106dd92a4 chromedriver + 5440164
+16  chromedriver                        0x0000000106e367d8 chromedriver + 5822424
+17  chromedriver                        0x0000000106e369a0 chromedriver + 5822880
+18  chromedriver                        0x0000000106e490c1 chromedriver + 5898433
+19  libsystem_pthread.dylib             0x00007ff8169b34e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff8169aef6b thread_start + 15
+
+DEBUG: 2025-08-24 06:36:26,224 INFO: Page load complete
+DEBUG: 2025-08-24 06:36:26,267 INFO: Searching for ['fireball'] on https://www.aliexpress.com/
+DEBUG: 2025-08-24 06:36:26,268 INFO: Filling input field
+DEBUG: 2025-08-24 06:36:27,071 INFO: Pressing search button
+DEBUG: 2025-08-24 06:36:39,653 ERROR: Message: 
+Stacktrace:
+0   chromedriver                        0x000000010bf86f58 chromedriver + 5934936
+1   chromedriver                        0x000000010bf7e4ea chromedriver + 5899498
+2   chromedriver                        0x000000010ba46e00 chromedriver + 429568
+3   chromedriver                        0x000000010ba98ff4 chromedriver + 765940
+4   chromedriver                        0x000000010ba99211 chromedriver + 766481
+5   chromedriver                        0x000000010bae8e94 chromedriver + 1093268
+6   chromedriver                        0x000000010babf08d chromedriver + 921741
+7   chromedriver                        0x000000010bae61e8 chromedriver + 1081832
+8   chromedriver                        0x000000010babee33 chromedriver + 921139
+9   chromedriver                        0x000000010ba8b39b chromedriver + 709531
+10  chromedriver                        0x000000010ba8c081 chromedriver + 712833
+11  chromedriver                        0x000000010bf44650 chromedriver + 5662288
+12  chromedriver                        0x000000010bf48514 chromedriver + 5678356
+13  chromedriver                        0x000000010bf1f302 chromedriver + 5509890
+14  chromedriver                        0x000000010bf48fbf chromedriver + 5681087
+15  chromedriver                        0x000000010bf0e2a4 chromedriver + 5440164
+16  chromedriver                        0x000000010bf6b7d8 chromedriver + 5822424
+17  chromedriver                        0x000000010bf6b9a0 chromedriver + 5822880
+18  chromedriver                        0x000000010bf7e0c1 chromedriver + 5898433
+19  libsystem_pthread.dylib             0x00007ff8169b34e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff8169aef6b thread_start + 15
+
+DEBUG: 2025-08-24 06:37:54,946 INFO: Page load complete
+DEBUG: 2025-08-24 06:37:54,978 INFO: Searching for ['fireball'] on https://www.aliexpress.com/
+DEBUG: 2025-08-24 06:37:54,979 INFO: Filling input field
+DEBUG: 2025-08-24 06:37:56,008 INFO: Pressing search button
+DEBUG: 2025-08-24 06:38:06,130 ERROR: Message: 
+Stacktrace:
+0   chromedriver                        0x0000000104358f58 chromedriver + 5934936
+1   chromedriver                        0x00000001043504ea chromedriver + 5899498
+2   chromedriver                        0x0000000103e18e00 chromedriver + 429568
+3   chromedriver                        0x0000000103e6aff4 chromedriver + 765940
+4   chromedriver                        0x0000000103e6b211 chromedriver + 766481
+5   chromedriver                        0x0000000103ebae94 chromedriver + 1093268
+6   chromedriver                        0x0000000103e9108d chromedriver + 921741
+7   chromedriver                        0x0000000103eb81e8 chromedriver + 1081832
+8   chromedriver                        0x0000000103e90e33 chromedriver + 921139
+9   chromedriver                        0x0000000103e5d39b chromedriver + 709531
+10  chromedriver                        0x0000000103e5e081 chromedriver + 712833
+11  chromedriver                        0x0000000104316650 chromedriver + 5662288
+12  chromedriver                        0x000000010431a514 chromedriver + 5678356
+13  chromedriver                        0x00000001042f1302 chromedriver + 5509890
+14  chromedriver                        0x000000010431afbf chromedriver + 5681087
+15  chromedriver                        0x00000001042e02a4 chromedriver + 5440164
+16  chromedriver                        0x000000010433d7d8 chromedriver + 5822424
+17  chromedriver                        0x000000010433d9a0 chromedriver + 5822880
+18  chromedriver                        0x00000001043500c1 chromedriver + 5898433
+19  libsystem_pthread.dylib             0x00007ff8169b34e1 _pthread_start + 125
+20  libsystem_pthread.dylib             0x00007ff8169aef6b thread_start + 15
+
+DEBUG: 2025-08-24 06:46:25,567 ERROR: Message: unknown error: net::ERR_INTERNET_DISCONNECTED
+  (Session info: chrome=139.0.7258.139)
+Stacktrace:
+0   chromedriver                        0x00000001064ddf58 chromedriver + 5934936
+1   chromedriver                        0x00000001064d54ea chromedriver + 5899498
+2   chromedriver                        0x0000000105f9de00 chromedriver + 429568
+3   chromedriver                        0x0000000105f94db6 chromedriver + 392630
+4   chromedriver                        0x0000000105f86078 chromedriver + 331896
+5   chromedriver                        0x0000000105f87d90 chromedriver + 339344
+6   chromedriver                        0x0000000105f863fb chromedriver + 332795
+7   chromedriver                        0x0000000105f85e10 chromedriver + 331280
+8   chromedriver                        0x0000000105f85b1b chromedriver + 330523
+9   chromedriver                        0x0000000105f839d4 chromedriver + 322004
+10  chromedriver                        0x0000000105f8419a chromedriver + 323994
+11  chromedriver                        0x0000000105fa1379 chromedriver + 443257
+12  chromedriver                        0x000000010603de25 chromedriver + 1084965
+13  chromedriver                        0x0000000106016062 chromedriver + 921698
+14  chromedriver                        0x000000010603d1e8 chromedriver + 1081832
+15  chromedriver                        0x0000000106015e33 chromedriver + 921139
+16  chromedriver                        0x0000000105fe239b chromedriver + 709531
+17  chromedriver                        0x0000000105fe3081 chromedriver + 712833
+18  chromedriver                        0x000000010649b650 chromedriver + 5662288
+19  chromedriver                        0x000000010649f514 chromedriver + 5678356
+20  chromedriver                        0x0000000106476302 chromedriver + 5509890
+21  chromedriver                        0x000000010649ffbf chromedriver + 5681087
+22  chromedriver                        0x00000001064652a4 chromedriver + 5440164
+23  chromedriver                        0x00000001064c27d8 chromedriver + 5822424
+24  chromedriver                        0x00000001064c29a0 chromedriver + 5822880
+25  chromedriver                        0x00000001064d50c1 chromedriver + 5898433
+26  libsystem_pthread.dylib             0x00007ff8169b34e1 _pthread_start + 125
+27  libsystem_pthread.dylib             0x00007ff8169aef6b thread_start + 15
+

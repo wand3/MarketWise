@@ -4,39 +4,10 @@ from flask_cors import CORS
 import os
 from config import Config
 from flask_sqlalchemy import SQLAlchemy
-from webapp import create_app
-from webapp.models.product import Base, ProductListing, PriceHistory
-
-# # create and configure the app
-# app = Flask(__name__, instance_relative_config=True)
-#
-# app.config.from_object(Config)
-# db = SQLAlchemy(model_class=Base)
-# db.init_app(app)
-# CORS(app)
-#
-# # ensure the instance folder exists
-# try:
-#     os.makedirs(app.instance_path)
-# except OSError:
-#     pass
+from webapp import create_app, db
+from webapp.models.product import ProductListing, PriceHistory
 
 
-# def create_app():
-#     app = Flask(__name__)
-#     app.config.from_object(Config)
-#
-#     db.init_app(app)
-#
-#     # Register blueprints
-#     from backend.routes import bp  # Your existing blueprint
-#     app.register_blueprint(bp)
-#     app.register_blueprint(data_bp)  # Add this line
-#
-#     with app.app_context():
-#         db.create_all()
-#
-#     return app
 app = create_app()
 
 
@@ -50,7 +21,7 @@ def make_shell_context():
 
     # db.create_all()
 
-    return dict(ProductListing=ProductListing, PriceHistory=PriceHistory)
+    return dict(db=db, ProductListing=ProductListing, PriceHistory=PriceHistory)
 
 
 if __name__ == '__main__':

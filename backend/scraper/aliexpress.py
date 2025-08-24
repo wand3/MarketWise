@@ -21,7 +21,7 @@ ALIEXPRESS = "https://aliexpress.com"
 URLS = {
     ALIEXPRESS: {
         "search_field_query": 'input[id="search-words"]',
-        "search_button_query": 'input[title="submit"]',
+        "search_button_query": 'input[type="button"]',
         "product_selector": ""
     }
 }
