@@ -162,52 +162,109 @@ def scroll_page_aliexpress(driver):
                 dismiss_button.click()
                 logger.info("click success")
         except Exception as e:
-            logger.info("Dismiss didn't pop up")
-            pass
-        finally:
-            scroll_count = 15
-            height = 0
+            logger.info(f"Dismiss didn't pop up {e}")
 
-            for i in range(scroll_count):
-                try:
-                    time.sleep(delay)
-                    driver.execute_script(f"window.scrollBy(0, {100 * height});")  # Scrolls down 500px
-                    height += (height + (i * 100))
-                    # Scroll to pagination
-                    # go_to_page = driver.find_element(By.CLASS_NAME, ".comet-pagination")
-                    go_to_page = driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div/div[2]/div[3]")
-                    logger.info("Go to page found")
+        scroll_count = 15
+        height = 0
 
-                    if go_to_page:
-                        try:
-                            ActionChains(driver) \
-                                .scroll_to_element(go_to_page) \
-                                .perform()
-                            logger.info("Scrolled to Go to page")
-                            next_page = driver.find_element(By.CSS_SELECTOR, ".comet-pagination-next")
-                            items = get_product(driver)
-                            logger.info(f"Items on Scroll {len(items)}")
-                            # logger.info(next_page.get_attribute("aria-disabled"))
-                            if next_page.get_attribute("aria-disabled") == 'false':
-                                logger.info(f"Active next page button seen")
-                                ActionChains(driver) \
-                                    .scroll_to_element(next_page) \
-                                    .click()
-                                next_page.click()
+        scroll_pause_time = 2  # Pause between scrolls
+        scroll_increment = 500  # Pixels to scroll each time
+        max_scrolls = 10  # Maximum number of scrolls
+        last_height = driver.execute_script("return document.body.scrollHeight")
+        for i in range(max_scrolls):
 
-                                logger.info(f"Active next page button clicked")
-                                page_visited += 1
-                                time.sleep(delay)
-                                # next_page.click()
-                                if page_visited == 6:
-                                    # to stop page visits on page 6
-                                    # items = get_product(driver)
-                                    return items
+        # for i in range(scroll_count):
+            try:
+                time.sleep(delay)
+                # driver.execute_script(f"window.scrollBy(0, {100 * height});")  # Scrolls down 500px
+                # height += (height + (i * 100))
 
-                        except Exception as e:
-                            logger.error(f"Scroll again : {e}")
-                except Exception as e:
-                    logger.error(f"Exception : {e}")
+                # Scroll down by increment
+                driver.execute_script(f"window.scrollBy(0, {scroll_increment});")
+
+                # Wait to load page
+                time.sleep(scroll_pause_time)
+
+                # Calculate new scroll height and compare with last scroll height
+                new_height = driver.execute_script("return document.body.scrollHeight")
+
+                # Break loop if we've reached the bottom
+                if new_height == last_height:
+                    break
+
+                last_height = new_height
+                # Scroll to pagination
+                # go_to_page = driver.find_element(By.CLASS_NAME, ".comet-pagination")
+                # # go_to_page = driver.find_element(By.XPATH, "/html/body/div[2]/div[1]/div/div[2]/div[3]")
+                # logger.info("Go to page found")
+                #
+                # if go_to_page:
+                #     try:
+                #         ActionChains(driver) \
+                #             .scroll_to_element(go_to_page) \
+                #             .perform()
+                #         logger.info("Scrolled to Go to page")
+                #         next_page = driver.find_element(By.CSS_SELECTOR, ".comet-pagination-next")
+                #         items = get_product(driver)
+                #         logger.info(f"Items on Scroll {len(items)}")
+                #         # logger.info(next_page.get_attribute("aria-disabled"))
+                #         if next_page.get_attribute("aria-disabled") == 'false':
+                #             logger.info(f"Active next page button seen")
+                #             ActionChains(driver) \
+                #                 .scroll_to_element(next_page) \
+                #                 .click()
+                #             next_page.click()
+                #
+                #             logger.info(f"Active next page button clicked")
+                #             page_visited += 1
+                #             time.sleep(delay)
+                #             # next_page.click()
+                #             if page_visited == 6:
+                #                 # to stop page visits on page 6
+                #                 # items = get_product(driver)
+                #                 return items
+                #
+                #     except Exception as e:
+                #         logger.error(f"Scroll again : {e}")
+                # try:
+                #     # Locate the whole pagination container
+                #     pagination = driver.find_element(By.CSS_SELECTOR, "div.g7_ba ul.comet-pagination")
+                #
+                #     # Extract all page buttons (li elements that contain <button> or <a>)
+                #     buttons = pagination.find_elements(By.CSS_SELECTOR, "li")
+                #
+                #     for btn in buttons:
+                #         try:
+                #             element = btn.find_element(By.CSS_SELECTOR, "button, a")  # either button or link
+                #             text = element.text or btn.get_attribute("class")  # use text or class if empty
+                #             location = element.location  # x,y coordinates
+                #             size = element.size  # width,height
+                #             # print(f"Button: {text} | Location: {location} | Size: {size}")
+                #
+                #             # find next button and click
+                #             try:
+                #                 next_li = driver.find_element(By.CSS_SELECTOR, "li.comet-pagination-next")
+                #                 if next_li.get_attribute("aria-disabled") == "false":
+                #                     items = get_product(driver)
+                #                     logger.info(f"Items on Scroll {len(items)}")
+                #
+                #                     next_btn = next_li.find_element(By.TAG_NAME, "button")
+                #                     next_btn.click()
+                #                     print("✅ Moved to next page")
+                #                 else:
+                #                     print("⚠️ Next button is disabled (already on last page)")
+                #             except Exception as e:
+                #                 print("❌ Could not find Next button:", e)
+                #
+                #         except Exception as e:
+                #             logger.error(f"Before Pagination find fail : {e}")
+                #
+                # except Exception as e:
+                #
+                #     logger.error(f"Pagination find fail : {e}")
+
+            except Exception as e:
+                logger.error(f"Exception : {e}")
 
 
 async def main_aliexpress(url, search_text):

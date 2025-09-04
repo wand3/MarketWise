@@ -1,7 +1,3 @@
-# from typing import Any
-# from sqlalchemy.orm import DeclarativeBase
-# from sqlalchemy import ForeignKey, String, Float, DateTime
-# from sqlalchemy.orm import Mapped, mapped_column, relationship
 from datetime import datetime
 from .. import db
 from datetime import datetime

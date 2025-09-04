@@ -2,33 +2,35 @@ import pytest
 import os
 from faker import Faker
 from config import TestConfig
-from product import ProductListing, PriceHistory, Base
-from app import db, app
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker, clear_mappers
+from webapp.models.product import ProductListing, PriceHistory
+from webapp import db, create_app
 
 # Configure testing environment before app initialization
 os.environ['FLASK_ENV'] = 'testing'
 if os.environ.get('FLASK_ENV') == 'testing':
-    app.config.from_object(TestConfig)
+    create_app(TestConfig)
+
+
+# Create a test app instance with test configuration
+@pytest.fixture(scope='session')
+def test_app():
+    app = create_app(TestConfig)  # Use your create_app function if available
+    with app.app_context():
+        yield app
 
 
 @pytest.fixture(scope="function")
-def db_session():
-    # Use in-memory SQLite DB
-    engine = create_engine("sqlite:///:memory:", echo=False, future=True)
+def db_session(test_app):
+    # Use Flask-SQLAlchemy's database operations
+    with test_app.app_context():
+        # Create all tables
+        db.create_all()
 
-    Base.metadata.drop_all(bind=engine)
-    Base.metadata.create_all(bind=engine)
+        yield db.session  # Use Flask-SQLAlchemy's session
 
-    Session = sessionmaker(bind=engine, future=True)
-    session = Session()
-
-    yield session  # this is where the testing happens
-
-    session.close()
-    Base.metadata.drop_all(bind=engine)
-    clear_mappers()
+        # Clean up after test
+        db.session.remove()
+        db.drop_all()
 
 
 @pytest.fixture

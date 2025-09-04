@@ -1,4 +1,4 @@
-from product import ProductListing, PriceHistory
+from webapp.models.product import ProductListing, PriceHistory
 from .conftest import db_session, fake
 from datetime import datetime
 
