@@ -69,7 +69,7 @@ def load_products():
                 "success": True,
                 "message": "No products found in JSON file",
                 "loaded_count": 0
-            })
+            }), 400
 
         # Process and load products
         loaded_count = 0
